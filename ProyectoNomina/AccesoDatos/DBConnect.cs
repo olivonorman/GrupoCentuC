@@ -1,26 +1,23 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-
+using System.Reflection;
 
 namespace AccesoDatos
 {
     public class DBConnect
     {
-        private string conexion;
+        private readonly string _connectionString;
 
-        public DBConnect()
+        public DBConnect(IConfiguration configuration)
         {
-            conexion = GetConnectionString();
+            _connectionString = configuration.GetConnectionString("ConnectDB");
         }
 
-        public string GetConnectionString()
-        {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-                .AddJsonFile("appsettings.json")
-                .Build();
 
-            return configuration.GetConnectionString("ConnectDB");
+        public SqlConnection GetConnection()
+        {
+            return new SqlConnection(_connectionString);
         }
+        
     }
 }
