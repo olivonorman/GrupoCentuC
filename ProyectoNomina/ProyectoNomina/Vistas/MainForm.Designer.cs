@@ -39,7 +39,7 @@
             btnEmployees = new Button();
             panelMain = new Panel();
             panelTitle = new Panel();
-            label1 = new Label();
+            lblTitle = new Label();
             panelSlide.SuspendLayout();
             panelReports.SuspendLayout();
             panelEmployees.SuspendLayout();
@@ -87,6 +87,7 @@
             btnEmployeeUpper50K.TextAlign = ContentAlignment.MiddleLeft;
             btnEmployeeUpper50K.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployeeUpper50K.UseVisualStyleBackColor = false;
+            btnEmployeeUpper50K.Click += btnEmployeeUpper50K_Click;
             // 
             // btnEmployeesWomen
             // 
@@ -194,24 +195,24 @@
             // panelTitle
             // 
             panelTitle.BackColor = Color.FromArgb(0, 70, 160);
-            panelTitle.Controls.Add(label1);
+            panelTitle.Controls.Add(lblTitle);
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(0, 0);
             panelTitle.Name = "panelTitle";
             panelTitle.Size = new Size(606, 50);
             panelTitle.TabIndex = 0;
             // 
-            // label1
+            // lblTitle
             // 
-            label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(0, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(606, 50);
-            label1.TabIndex = 1;
-            label1.Text = "Nomina";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitle.Dock = DockStyle.Fill;
+            lblTitle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitle.ForeColor = Color.White;
+            lblTitle.Location = new Point(0, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(606, 50);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Nomina";
+            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -235,7 +236,7 @@
         private Panel panelSlide;
         private Panel panelMain;
         private Panel panelTitle;
-        private Label label1;
+        private Label lblTitle;
         private Button btnEmployees;
         private Panel panel1;
         private Button btnCreateEmployee;

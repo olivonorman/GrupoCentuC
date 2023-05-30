@@ -1,6 +1,7 @@
 using AccesoDatos;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using ProyectoNomina.Vistas;
 using ReglaDeNegocios;
 
 namespace ProyectoNomina
@@ -47,6 +48,24 @@ namespace ProyectoNomina
             }
         }
 
+        private Form activeForm = null;
+        public void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            lblTitle.Text = childForm.Text;
+            panelMain.Controls.Add(childForm);
+            panelMain.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEmployees);
@@ -55,6 +74,12 @@ namespace ProyectoNomina
         private void btnReport_Click(object sender, EventArgs e)
         {
             showSubMenu(panelReports);
+        }
+
+        private void btnEmployeeUpper50K_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEmployees50K());
+            hideSubmenu();
         }
     }
 }

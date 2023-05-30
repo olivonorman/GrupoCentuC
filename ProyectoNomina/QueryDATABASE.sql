@@ -67,3 +67,31 @@ BEGIN
 DELETE FROM Empleado WHERE Id = @Id
 END
 
+--Procedimientos para obtener todos los empleados
+CREATE PROCEDURE ObtenerEmpleados
+AS
+BEGIN
+SELECT * FROM Empleado
+END
+
+
+--Procedimientos para obtener los empleados que son mujeres.
+CREATE PROCEDURE ObtenerEmpleadosMujeres
+AS
+BEGIN
+SELECT * FROM Empleado WHERE Sexo = 'F'
+END
+
+--Procedimientos para obtener los empleados que poseen licencia.
+CREATE PROCEDURE ObtenerEmpleadosConLicencia
+AS
+BEGIN
+SELECT * FROM Empleado WHERE PoseeLicencia = 1
+END
+
+--Procedimientos para obtener los empleados con el sueldo mayor a $50,000
+CREATE PROCEDURE ObtenerEmpleadosSalario50
+AS
+BEGIN
+SELECT * FROM Empleado WHERE SueldoBruto >= 50000
+END
