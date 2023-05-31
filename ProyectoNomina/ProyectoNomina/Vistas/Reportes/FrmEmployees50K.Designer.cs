@@ -32,13 +32,14 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dgvReport50K = new DataGridView();
-            panel1 = new Panel();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
+            Sexo = new DataGridViewTextBoxColumn();
             FechaNacimiento = new DataGridViewTextBoxColumn();
             SueldoBruto = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgvReport50K).BeginInit();
             SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             dgvReport50K.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvReport50K.ColumnHeadersHeight = 30;
             dgvReport50K.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvReport50K.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, FechaNacimiento, SueldoBruto });
+            dgvReport50K.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, SueldoBruto });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -80,22 +81,15 @@
             dgvReport50K.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvReport50K.RowHeadersVisible = false;
             dgvReport50K.RowTemplate.Height = 25;
-            dgvReport50K.Size = new Size(652, 450);
+            dgvReport50K.Size = new Size(917, 436);
             dgvReport50K.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(0, 70, 160);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 350);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(652, 100);
-            panel1.TabIndex = 1;
             // 
             // Id
             // 
             Id.HeaderText = "Id";
             Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Width = 50;
             // 
             // Nombre
             // 
@@ -111,6 +105,13 @@
             // 
             Edad.HeaderText = "Edad";
             Edad.Name = "Edad";
+            Edad.Width = 50;
+            // 
+            // Sexo
+            // 
+            Sexo.HeaderText = "Sexo";
+            Sexo.Name = "Sexo";
+            Sexo.Width = 50;
             // 
             // FechaNacimiento
             // 
@@ -122,12 +123,22 @@
             // 
             SueldoBruto.HeaderText = "SueldoBruto";
             SueldoBruto.Name = "SueldoBruto";
+            SueldoBruto.Width = 150;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(0, 70, 160);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 355);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(917, 81);
+            panel1.TabIndex = 1;
             // 
             // FrmEmployees50K
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(652, 450);
+            ClientSize = new Size(917, 436);
             Controls.Add(panel1);
             Controls.Add(dgvReport50K);
             Name = "FrmEmployees50K";
@@ -144,6 +155,7 @@
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn Edad;
+        private DataGridViewTextBoxColumn Sexo;
         private DataGridViewTextBoxColumn FechaNacimiento;
         private DataGridViewTextBoxColumn SueldoBruto;
     }

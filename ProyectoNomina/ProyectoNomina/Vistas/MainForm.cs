@@ -2,20 +2,23 @@ using AccesoDatos;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using ProyectoNomina.Vistas;
+using ProyectoNomina.Vistas.Empleados;
 using ReglaDeNegocios;
+using ReglaDeNegocios.Interfaz;
+using ReglaDeNegocios.Servicios;
 
 namespace ProyectoNomina
 {
     public partial class MainForm : Form
     {
-        private readonly ClaseNegocio claseNegocio;
         public MainForm()
         {
             InitializeComponent();
             customizeDesign();
 
-
         }
+
+        
 
         private void customizeDesign()
         {
@@ -79,6 +82,17 @@ namespace ProyectoNomina
         private void btnEmployeeUpper50K_Click(object sender, EventArgs e)
         {
             openChildForm(new FrmEmployees50K());
+            hideSubmenu();
+        }
+
+        private void btnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+        .AddJsonFile("appsettings.json")
+        .Build();
+            IEmpleadoRepository empleadoRepository = new EmpleadoRepository(configuration);
+            openChildForm(new FrmEmployee(empleadoRepository));
             hideSubmenu();
         }
     }
