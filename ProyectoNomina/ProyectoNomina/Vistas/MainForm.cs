@@ -1,24 +1,24 @@
-using AccesoDatos;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using ProyectoNomina.Vistas;
 using ProyectoNomina.Vistas.Empleados;
-using ReglaDeNegocios;
-using ReglaDeNegocios.Interfaz;
-using ReglaDeNegocios.Servicios;
+using ProyectoNomina.Vistas.Reportes;
+using ReglaDeNegocios.Servicios.Interfaz;
 
 namespace ProyectoNomina
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private Form activeForm = null;
+        private readonly IEmpleadoRepository empleadoRepository;
+        public MainForm(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             customizeDesign();
-
+            this.empleadoRepository = empleadoRepository;
         }
 
-        
+
 
         private void customizeDesign()
         {
@@ -51,7 +51,8 @@ namespace ProyectoNomina
             }
         }
 
-        private Form activeForm = null;
+
+
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)
@@ -81,18 +82,26 @@ namespace ProyectoNomina
 
         private void btnEmployeeUpper50K_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmEmployees50K());
+            openChildForm(new FrmEmployees50K(empleadoRepository));
             hideSubmenu();
         }
 
         private void btnCreateEmployee_Click(object sender, EventArgs e)
         {
-            IConfiguration configuration = new ConfigurationBuilder()
-        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-        .AddJsonFile("appsettings.json")
-        .Build();
-            IEmpleadoRepository empleadoRepository = new EmpleadoRepository(configuration);
+
             openChildForm(new FrmEmployee(empleadoRepository));
+            hideSubmenu();
+        }
+
+        private void btnEmployeesLisence_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEmployeesLicense(empleadoRepository));
+            hideSubmenu();
+        }
+
+        private void btnEmployeesWomen_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEmployeesWoman(empleadoRepository));
             hideSubmenu();
         }
     }

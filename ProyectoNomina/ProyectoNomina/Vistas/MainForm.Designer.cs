@@ -58,7 +58,7 @@
             panelSlide.Dock = DockStyle.Left;
             panelSlide.Location = new Point(0, 0);
             panelSlide.Name = "panelSlide";
-            panelSlide.Size = new Size(194, 436);
+            panelSlide.Size = new Size(194, 503);
             panelSlide.TabIndex = 0;
             // 
             // panelReports
@@ -109,6 +109,7 @@
             btnEmployeesWomen.TextAlign = ContentAlignment.MiddleLeft;
             btnEmployeesWomen.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployeesWomen.UseVisualStyleBackColor = false;
+            btnEmployeesWomen.Click += btnEmployeesWomen_Click;
             // 
             // btnEmployeesLisence
             // 
@@ -127,6 +128,7 @@
             btnEmployeesLisence.TextAlign = ContentAlignment.MiddleLeft;
             btnEmployeesLisence.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployeesLisence.UseVisualStyleBackColor = false;
+            btnEmployeesLisence.Click += btnEmployeesLisence_Click;
             // 
             // btnReport
             // 
@@ -201,7 +203,7 @@
             panelMain.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             panelMain.Location = new Point(194, 0);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(723, 436);
+            panelMain.Size = new Size(1004, 503);
             panelMain.TabIndex = 2;
             // 
             // panelTitle
@@ -211,7 +213,7 @@
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(0, 0);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(723, 50);
+            panelTitle.Size = new Size(1004, 50);
             panelTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -221,7 +223,7 @@
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(723, 50);
+            lblTitle.Size = new Size(1004, 50);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Nomina";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -230,7 +232,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(917, 436);
+            ClientSize = new Size(1198, 503);
             Controls.Add(panelMain);
             Controls.Add(panelSlide);
             Name = "MainForm";

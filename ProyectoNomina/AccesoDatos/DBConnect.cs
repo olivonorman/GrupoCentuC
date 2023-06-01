@@ -7,16 +7,19 @@ namespace AccesoDatos
     {
         private readonly string _connectionString;
 
-        public DBConnect(IConfiguration configuration)
+        public DBConnect()
         {
-            _connectionString = configuration.GetConnectionString("ConnectDB");
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true)
+                .Build();
+            _connectionString = configuration.GetValue<string>("ConnectDB");
         }
 
-        
+
         public SqlConnection GetConnection()
         {
             return new SqlConnection(_connectionString);
         }
-        
     }
 }

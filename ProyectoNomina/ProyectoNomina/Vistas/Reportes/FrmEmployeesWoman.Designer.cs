@@ -1,6 +1,6 @@
-﻿namespace ProyectoNomina.Vistas
+﻿namespace ProyectoNomina.Vistas.Reportes
 {
-    partial class FrmEmployees50K
+    partial class FrmEmployeesWoman
     {
         /// <summary>
         /// Required designer variable.
@@ -31,23 +31,31 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            dgvReport50K = new DataGridView();
+            panel1 = new Panel();
+            dgvEmployeesWoman = new DataGridView();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
             Edad = new DataGridViewTextBoxColumn();
-            Sexo = new DataGridViewTextBoxColumn();
-            FechaNacimiento = new DataGridViewTextBoxColumn();
-            SueldoBruto = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dgvReport50K).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEmployeesWoman).BeginInit();
             SuspendLayout();
             // 
-            // dgvReport50K
+            // panel1
             // 
-            dgvReport50K.AllowUserToAddRows = false;
-            dgvReport50K.BackgroundColor = Color.White;
-            dgvReport50K.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            panel1.BackColor = Color.FromArgb(0, 70, 160);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            panel1.Location = new Point(0, 355);
+            panel1.Margin = new Padding(2);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(653, 81);
+            panel1.TabIndex = 0;
+            // 
+            // dgvEmployeesWoman
+            // 
+            dgvEmployeesWoman.AllowUserToAddRows = false;
+            dgvEmployeesWoman.BackgroundColor = Color.White;
+            dgvEmployeesWoman.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 70, 160);
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -55,10 +63,9 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvReport50K.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvReport50K.ColumnHeadersHeight = 30;
-            dgvReport50K.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvReport50K.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, SueldoBruto });
+            dgvEmployeesWoman.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEmployeesWoman.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgvEmployeesWoman.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -66,11 +73,12 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvReport50K.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvReport50K.Dock = DockStyle.Fill;
-            dgvReport50K.EnableHeadersVisualStyles = false;
-            dgvReport50K.Location = new Point(0, 0);
-            dgvReport50K.Name = "dgvReport50K";
+            dgvEmployeesWoman.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvEmployeesWoman.Dock = DockStyle.Fill;
+            dgvEmployeesWoman.GridColor = SystemColors.ControlDark;
+            dgvEmployeesWoman.Location = new Point(0, 0);
+            dgvEmployeesWoman.Margin = new Padding(2);
+            dgvEmployeesWoman.Name = "dgvEmployeesWoman";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
             dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
@@ -78,85 +86,58 @@
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvReport50K.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvReport50K.RowHeadersVisible = false;
-            dgvReport50K.RowTemplate.Height = 25;
-            dgvReport50K.Size = new Size(653, 436);
-            dgvReport50K.TabIndex = 0;
+            dgvEmployeesWoman.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvEmployeesWoman.RowHeadersVisible = false;
+            dgvEmployeesWoman.RowTemplate.Height = 25;
+            dgvEmployeesWoman.Size = new Size(653, 355);
+            dgvEmployeesWoman.TabIndex = 1;
             // 
             // Id
             // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Id.HeaderText = "Id";
             Id.Name = "Id";
             Id.ReadOnly = true;
-            Id.Width = 50;
+            Id.Width = 49;
             // 
             // Nombre
             // 
+            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Nombre.HeaderText = "Nombre";
             Nombre.Name = "Nombre";
             // 
             // Apellido
             // 
+            Apellido.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Apellido.HeaderText = "Apellido";
             Apellido.Name = "Apellido";
             // 
             // Edad
             // 
+            Edad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Edad.HeaderText = "Edad";
             Edad.Name = "Edad";
-            Edad.Width = 50;
             // 
-            // Sexo
-            // 
-            Sexo.HeaderText = "Sexo";
-            Sexo.Name = "Sexo";
-            Sexo.Width = 50;
-            // 
-            // FechaNacimiento
-            // 
-            FechaNacimiento.HeaderText = "FechaNacimiento";
-            FechaNacimiento.Name = "FechaNacimiento";
-            FechaNacimiento.Width = 150;
-            // 
-            // SueldoBruto
-            // 
-            SueldoBruto.HeaderText = "SueldoBruto";
-            SueldoBruto.Name = "SueldoBruto";
-            SueldoBruto.Width = 150;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(0, 70, 160);
-            panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 355);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(653, 81);
-            panel1.TabIndex = 1;
-            // 
-            // FrmEmployees50K
+            // FrmEmployeesWoman
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(653, 436);
+            Controls.Add(dgvEmployeesWoman);
             Controls.Add(panel1);
-            Controls.Add(dgvReport50K);
-            Name = "FrmEmployees50K";
-            Text = "FrmEmployees50K";
-            ((System.ComponentModel.ISupportInitialize)dgvReport50K).EndInit();
+            Name = "FrmEmployeesWoman";
+            Text = "FrmEmployeesWoman";
+            ((System.ComponentModel.ISupportInitialize)dgvEmployeesWoman).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private DataGridView dgvReport50K;
         private Panel panel1;
+        private DataGridView dgvEmployeesWoman;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Apellido;
         private DataGridViewTextBoxColumn Edad;
-        private DataGridViewTextBoxColumn Sexo;
-        private DataGridViewTextBoxColumn FechaNacimiento;
-        private DataGridViewTextBoxColumn SueldoBruto;
     }
 }

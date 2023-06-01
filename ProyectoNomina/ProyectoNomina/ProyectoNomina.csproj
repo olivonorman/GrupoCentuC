@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ReglaDeNegocios\ReglaDeNegocios.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -25,6 +21,10 @@
 
   <ItemGroup>
     <Folder Include="Iconos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReglaDeNegocios\ReglaDeNegocios.csproj" />
   </ItemGroup>
 
   <ItemGroup>

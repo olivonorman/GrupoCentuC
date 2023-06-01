@@ -1,4 +1,5 @@
 ﻿using ReglaDeNegocios.Servicios.Interfaz;
+using ReglaDeNegocios.Servicios.Repositorio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,30 +10,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoNomina.Vistas
+namespace ProyectoNomina.Vistas.Reportes
 {
-    public partial class FrmEmployees50K : Form
+    public partial class FrmEmployeesWoman : Form
     {
         private readonly IEmpleadoRepository empleadoRepository;
 
-        public FrmEmployees50K(IEmpleadoRepository empleadoRepository)
+        public FrmEmployeesWoman(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
-            LoadEmployee50K();
+            LoadEmployeesWoman();
         }
 
-        public void LoadEmployee50K()
+
+        public void LoadEmployeesWoman()
         {
             int i = 0;
-            dgvReport50K.Rows.Clear();
+            dgvEmployeesWoman.Rows.Clear();
             DataTable dt = new DataTable();
-            dt = empleadoRepository.ObtenerEmpleadosConSalarioSuperior();
+            dt = empleadoRepository.ObtenerEmpleadosMujeres();
             foreach (DataRow row in dt.Rows)
             {
                 i++;
-                dgvReport50K.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString(),
-                    row["Sexo"].ToString(), row["FechaNacimiento"].ToString(), row["SueldoBruto"].ToString());
+                dgvEmployeesWoman.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString());
             }
         }
     }

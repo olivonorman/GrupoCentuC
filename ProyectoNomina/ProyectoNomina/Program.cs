@@ -1,4 +1,8 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReglaDeNegocios.Servicios.Interfaz;
+using ReglaDeNegocios.Servicios.Repositorio;
 
 namespace ProyectoNomina
 {
@@ -10,10 +14,13 @@ namespace ProyectoNomina
         [STAThread]
         static void Main()
         {
+
+            IEmpleadoRepository empleadoRepository = new EmpleadoRepository();
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainForm());
+            Application.Run(new MainForm(empleadoRepository));
         }
+        
     }
 }

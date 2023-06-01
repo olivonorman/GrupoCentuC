@@ -1,8 +1,6 @@
-﻿using AccesoDatos;
-using Microsoft.Extensions.Configuration;
-using ReglaDeNegocios.Entidades;
-using ReglaDeNegocios.Interfaz;
-using ReglaDeNegocios.Servicios;
+﻿using Microsoft.Extensions.Configuration;
+using ReglaDeNegocios.Entidad;
+using ReglaDeNegocios.Servicios.Interfaz;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,7 +27,7 @@ namespace ProyectoNomina.Vistas.Empleados
             this.empleadoRepository = empleadoRepository;
         }
 
-      
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -64,10 +62,11 @@ namespace ProyectoNomina.Vistas.Empleados
                             SueldoBruto = sueldoBruto
 
                         };
-                        
-                       
+
+                        //EmpleadoRepository empleadoRepository = new EmpleadoRepository();
                         empleadoRepository.InsertarEmpleado(empleado);
                         MessageBox.Show("Empleado creado correctamente!");
+                        employee.LoadEmployees();
                         this.Close();
                     }
                 }

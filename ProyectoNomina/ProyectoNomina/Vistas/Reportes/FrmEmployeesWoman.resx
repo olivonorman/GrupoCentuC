@@ -129,31 +129,4 @@
   <metadata name="Edad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Sexo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="FechaNacimiento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="PoseeLicencia.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="SueldoBruto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAAb9JREFUWEftl8lKA0EURRPitFHR7xGEiKB7QfwScaMGVBRRf8Jh5ycYBAf0I7LX
-        mKAk3cGNz1PwGpqq6tCD0gRy4bSN9e6tsnw9VcYaKYnIjEiwLtK/4OctPCmc989hjZppLf87iXwtEn7G
-        RD1gjqFQE56KfC6ovZgI2yK0a02Shg7eTY3JLhKqhDTgJxaaFePd46SqsenF6o+tsCIcamw6ma3DVOQv
-        tyEr3ND44RLpzmNoWwFJvMCr9bsk3kTaszpNsig8sIxJhBwmYYrzgTWWREOn8YuKCYroXq/Zpqs2s+i0
-        Vwk7KzW1ueJaX/WYksizAOjV1eYqY+fnXEBwpDZX7MC1xxDxDWaiiJbazAJa1pip9WVAeKk2Vww2/abg
-        kUPqe7ypxfNsZSjhnZa5Ygfu/abggUPWBZiHVDxDCZta5ooF3PhNXnL2QHilNlcMnvhNXv6jCQfLHkMS
-        ORcwWFKbK0bLvREZUVTerdio9IeREc1Y3uM4EpfkjicoJ/1tjU0vXOW+kkVi68xL6UcsNC30UYGX0rhE
-        OnME7sN7bIIkaLZgN3XDZRHpNf6fK8BHiPNhwndDr25qtHysUVCl8gu9ldliJTzlVwAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
 </root>
