@@ -70,27 +70,22 @@ namespace ProyectoNomina
             childForm.Show();
         }
 
+
+
         private void btnEmployees_Click(object sender, EventArgs e)
         {
             showSubMenu(panelEmployees);
         }
 
+        private void btnCreateEmployee_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FrmEmployee(empleadoRepository));
+            hideSubmenu();
+        }
+
         private void btnReport_Click(object sender, EventArgs e)
         {
             showSubMenu(panelReports);
-        }
-
-        private void btnEmployeeUpper50K_Click(object sender, EventArgs e)
-        {
-            openChildForm(new FrmEmployees50K(empleadoRepository));
-            hideSubmenu();
-        }
-
-        private void btnCreateEmployee_Click(object sender, EventArgs e)
-        {
-
-            openChildForm(new FrmEmployee(empleadoRepository));
-            hideSubmenu();
         }
 
         private void btnEmployeesLisence_Click(object sender, EventArgs e)
@@ -103,6 +98,18 @@ namespace ProyectoNomina
         {
             openChildForm(new FrmEmployeesWoman(empleadoRepository));
             hideSubmenu();
+        }
+
+        private void btnEmployeeUpper50K_Click(object sender, EventArgs e)
+        {
+
+            openChildForm(new FrmEmployees50K(empleadoRepository));
+            hideSubmenu();
+        }
+
+        private void btnCalcularNomina_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

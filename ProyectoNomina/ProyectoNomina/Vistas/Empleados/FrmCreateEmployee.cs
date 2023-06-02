@@ -20,7 +20,7 @@ namespace ProyectoNomina.Vistas.Empleados
         FrmEmployee employee;
         private readonly IEmpleadoRepository empleadoRepository;
         public bool isEditing = false;
-        public FrmCreateEmployee(FrmEmployee frmEmployee,IEmpleadoRepository empleadoRepository)
+        public FrmCreateEmployee(FrmEmployee frmEmployee, IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             employee = frmEmployee;
@@ -44,7 +44,23 @@ namespace ProyectoNomina.Vistas.Empleados
                 {
                     if (MessageBox.Show("Seguro que deseas actualizar este registro?", "Actualizar Empleado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        Empleado empleado = new Empleado
+                        {
+                            Nombre = nombre,
+                            Apellido = apellido,
+                            Edad = edad,
+                            Sexo = sexo,
+                            FechaNacimiento = fechaNacimiento,
+                            PoseeLicencia = poseeLicencia,
+                            SueldoBruto = sueldoBruto,
+                            Id = int.Parse(lblId.Text)
+                            
+                        };
 
+                        empleadoRepository.ActualizarEmpleado(empleado);
+                        MessageBox.Show("Empleado actualizado correctamente!");
+                        employee.LoadEmployees();
+                        this.Close();
                     }
                 }
                 else
@@ -63,7 +79,6 @@ namespace ProyectoNomina.Vistas.Empleados
 
                         };
 
-                        //EmpleadoRepository empleadoRepository = new EmpleadoRepository();
                         empleadoRepository.InsertarEmpleado(empleado);
                         MessageBox.Show("Empleado creado correctamente!");
                         employee.LoadEmployees();

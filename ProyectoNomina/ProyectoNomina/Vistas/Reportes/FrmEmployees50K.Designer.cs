@@ -142,7 +142,7 @@
             Controls.Add(panel1);
             Controls.Add(dgvReport50K);
             Name = "FrmEmployees50K";
-            Text = "FrmEmployees50K";
+            Text = "Reporte de Salario mayor a $50,000";
             ((System.ComponentModel.ISupportInitialize)dgvReport50K).EndInit();
             ResumeLayout(false);
         }

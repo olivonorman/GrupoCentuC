@@ -41,6 +41,8 @@
             FechaNacimiento = new DataGridViewTextBoxColumn();
             PoseeLicencia = new DataGridViewTextBoxColumn();
             SueldoBruto = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             panelEmployees1 = new Panel();
             btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmployees).BeginInit();
@@ -62,7 +64,7 @@
             dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvEmployees.ColumnHeadersHeight = 30;
             dgvEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvEmployees.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, PoseeLicencia, SueldoBruto });
+            dgvEmployees.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, PoseeLicencia, SueldoBruto, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -89,6 +91,7 @@
             dgvEmployees.RowTemplate.Height = 25;
             dgvEmployees.Size = new Size(1198, 503);
             dgvEmployees.TabIndex = 0;
+            dgvEmployees.CellContentClick += dgvEmployees_CellContentClick;
             // 
             // Id
             // 
@@ -146,6 +149,22 @@
             SueldoBruto.HeaderText = "SueldoBruto";
             SueldoBruto.Name = "SueldoBruto";
             // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.Name = "Edit";
+            Edit.Width = 5;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.Name = "Delete";
+            Delete.Width = 5;
+            // 
             // panelEmployees1
             // 
             panelEmployees1.BackColor = Color.FromArgb(0, 70, 160);
@@ -179,7 +198,7 @@
             Controls.Add(panelEmployees1);
             Controls.Add(dgvEmployees);
             Name = "FrmEmployee";
-            Text = "FrmEmployee";
+            Text = "Crear empleados";
             ((System.ComponentModel.ISupportInitialize)dgvEmployees).EndInit();
             panelEmployees1.ResumeLayout(false);
             ResumeLayout(false);
@@ -198,5 +217,7 @@
         private DataGridViewTextBoxColumn FechaNacimiento;
         private DataGridViewTextBoxColumn PoseeLicencia;
         private DataGridViewTextBoxColumn SueldoBruto;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }

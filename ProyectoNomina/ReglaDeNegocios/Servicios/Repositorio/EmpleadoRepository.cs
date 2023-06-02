@@ -38,10 +38,66 @@ namespace ReglaDeNegocios.Servicios.Repositorio
                 comando.Parameters.AddWithValue("@Sexo", empleado.Sexo);
                 comando.Parameters.AddWithValue("@FechaNacimiento", empleado.FechaNacimiento);
                 comando.Parameters.AddWithValue("@PoseeLicencia", empleado.PoseeLicencia);
-                comando.Parameters.AddWithValue("@SueldoBruto", empleado.SueldoNeto);
+                comando.Parameters.AddWithValue("@SueldoBruto", empleado.SueldoBruto);
 
                 comando.ExecuteNonQuery();
             }
+        }
+
+        public decimal CalcularISR(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
+
+            if (sueldoBruto <= 34685.00m)
+            {
+              return sueldoBruto;
+
+            }else if(sueldoBruto > 34685.00m && sueldoBruto <= 52027.42m)
+            {
+                
+                decimal montoEscala = 520270.42m;
+                decimal excedente = montoEscala - salarioNeto;
+                decimal tasaISR = excedente * 0.15m;
+                
+                return tasaISR;
+            }else if(sueldoBruto > 52027.42m && sueldoBruto <= 72260.25m)
+            {
+                
+                decimal montoEscala = 72260.25m + 2601.36m;
+                decimal excedente = montoEscala - salarioNeto;
+                decimal tasaISR = excedente * 0.20m;
+                return tasaISR;
+            }else if(sueldoBruto > 72260.25m)
+            {
+              
+                decimal montoEscala = 72260.25m + 6647.92m;
+                decimal excedente = montoEscala - salarioNeto;
+                decimal tasaISR = excedente * 0.25m;
+                return tasaISR;
+            }
+            return 0;
+        }
+
+        public decimal CalcularSueldoNeto(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
+
+            return salarioNeto;
+        }
+
+        public decimal CalcularTSS(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+
+            return sumaDescuentoTSS;
         }
 
         public DataTable Consultar(SqlCommand comando)

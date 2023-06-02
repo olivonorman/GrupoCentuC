@@ -315,21 +315,21 @@
         private Label lblTitulo;
         private PictureBox picClose;
         public Label lblId;
-        private TextBox txtNombre;
         private Label lblNombre;
         private Label lblApellido;
-        private TextBox txtApellido;
         private Label lblEdad;
-        private TextBox txtEdad;
         private Label lblSexo;
         private Label lblPoseeLicencia;
         private Label lblFechaNac;
-        private DateTimePicker dtFechaNac;
         private Label lblSueldo;
-        private TextBox txtSueldo;
         private Button btnSave;
         private Button btnCancel;
-        private ComboBox cbxSexo;
-        private CheckBox chkLicencia;
+        public TextBox txtNombre;
+        public TextBox txtApellido;
+        public TextBox txtEdad;
+        public DateTimePicker dtFechaNac;
+        public TextBox txtSueldo;
+        public ComboBox cbxSexo;
+        public CheckBox chkLicencia;
     }
 }

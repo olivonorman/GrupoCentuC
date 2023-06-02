@@ -18,7 +18,9 @@ namespace ReglaDeNegocios.Servicios.Interfaz
         DataTable ObtenerEmpleadosMujeres();
         DataTable ObtenerEmpleadoConLicencia();
         DataTable ObtenerEmpleadosConSalarioSuperior();
-
         DataTable Consultar(SqlCommand comando);
+        decimal CalcularISR(decimal sueldoBruto);
+        decimal CalcularTSS(decimal sueldoBruto);  
+        decimal CalcularSueldoNeto(decimal sueldoBruto);
     }
 }

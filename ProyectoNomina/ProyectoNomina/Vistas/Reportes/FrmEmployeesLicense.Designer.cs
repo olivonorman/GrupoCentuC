@@ -79,42 +79,46 @@
             // 
             Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Id.HeaderText = "Id";
+            Id.MinimumWidth = 10;
             Id.Name = "Id";
             Id.Width = 47;
             // 
             // Nombre
             // 
             Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Nombre.FillWeight = 38.5944633F;
             Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 50;
             Nombre.Name = "Nombre";
             // 
             // Apellido
             // 
             Apellido.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Apellido.FillWeight = 99.1176F;
             Apellido.HeaderText = "Apellido";
+            Apellido.MinimumWidth = 50;
             Apellido.Name = "Apellido";
             // 
             // Edad
             // 
             Edad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Edad.FillWeight = 48.3870926F;
+            Edad.FillWeight = 35F;
             Edad.HeaderText = "Edad";
+            Edad.MinimumWidth = 10;
             Edad.Name = "Edad";
             // 
             // Sexo
             // 
             Sexo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Sexo.FillWeight = 44.2180252F;
+            Sexo.FillWeight = 40F;
             Sexo.HeaderText = "Sexo";
+            Sexo.MinimumWidth = 15;
             Sexo.Name = "Sexo";
             // 
             // FechaNacimiento
             // 
             FechaNacimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FechaNacimiento.FillWeight = 269.68277F;
+            FechaNacimiento.FillWeight = 165F;
             FechaNacimiento.HeaderText = "Fecha de Nacimiento";
+            FechaNacimiento.MinimumWidth = 50;
             FechaNacimiento.Name = "FechaNacimiento";
             // 
             // FrmEmployeesLicense
@@ -125,7 +129,7 @@
             Controls.Add(DgvEmployeesLicense);
             Controls.Add(panel1);
             Name = "FrmEmployeesLicense";
-            Text = "FrmEmployeesLicense";
+            Text = "Reporte de empleados que poseen licencia";
             ((System.ComponentModel.ISupportInitialize)DgvEmployeesLicense).EndInit();
             ResumeLayout(false);
         }
