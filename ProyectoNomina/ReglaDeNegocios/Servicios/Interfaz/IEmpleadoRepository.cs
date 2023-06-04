@@ -11,6 +11,7 @@ namespace ReglaDeNegocios.Servicios.Interfaz
 {
     public interface IEmpleadoRepository
     {
+        #region Metodos para implementarlos en el repositorio
         DataTable ObtenerTodosLosEmpleados();
         void InsertarEmpleado(Empleado empleado);
         void ActualizarEmpleado(Empleado empleado);
@@ -22,5 +23,10 @@ namespace ReglaDeNegocios.Servicios.Interfaz
         decimal CalcularISR(decimal sueldoBruto);
         decimal CalcularTSS(decimal sueldoBruto);  
         decimal CalcularSueldoNeto(decimal sueldoBruto);
+        void CalcularNomina(int empleadoId, decimal isr, decimal tss, decimal sueldoNeto);
+        bool IniciarSesion(UserLogin userLogin);
+        void RegistrarUsuario(Usuario usuario);
+        void UsuarioCache(UsuarioLoginCache usuario);
+        #endregion
     }
 }

@@ -33,62 +33,91 @@ namespace ProyectoNomina.Vistas.Empleados
         {
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
-            int edad = Convert.ToInt32(txtEdad.Text);
-            char sexo = cbxSexo.SelectedItem.ToString()[0];
+            int edad;
+            char sexo;
             DateTime fechaNacimiento = dtFechaNac.Value;
             bool poseeLicencia = chkLicencia.Checked;
-            decimal sueldoBruto = Convert.ToDecimal(txtSueldo.Text);
-            try
+            decimal sueldoBruto;
+
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(apellido) || string.IsNullOrEmpty(txtEdad.Text) || cbxSexo.SelectedItem == null || string.IsNullOrEmpty(txtSueldo.Text))
             {
-                if (isEditing)
-                {
-                    if (MessageBox.Show("Seguro que deseas actualizar este registro?", "Actualizar Empleado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        Empleado empleado = new Empleado
-                        {
-                            Nombre = nombre,
-                            Apellido = apellido,
-                            Edad = edad,
-                            Sexo = sexo,
-                            FechaNacimiento = fechaNacimiento,
-                            PoseeLicencia = poseeLicencia,
-                            SueldoBruto = sueldoBruto,
-                            Id = int.Parse(lblId.Text)
-                            
-                        };
-
-                        empleadoRepository.ActualizarEmpleado(empleado);
-                        MessageBox.Show("Empleado actualizado correctamente!");
-                        employee.LoadEmployees();
-                        this.Close();
-                    }
-                }
-                else
-                {
-                    if (MessageBox.Show("Seguro que deseas guardar este registro?", "Guardar Empleado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        Empleado empleado = new Empleado
-                        {
-                            Nombre = nombre,
-                            Apellido = apellido,
-                            Edad = edad,
-                            Sexo = sexo,
-                            FechaNacimiento = fechaNacimiento,
-                            PoseeLicencia = poseeLicencia,
-                            SueldoBruto = sueldoBruto
-
-                        };
-
-                        empleadoRepository.InsertarEmpleado(empleado);
-                        MessageBox.Show("Empleado creado correctamente!");
-                        employee.LoadEmployees();
-                        this.Close();
-                    }
-                }
+                MessageBox.Show("Debe de llenar todos los campos", "Completar campos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            catch (Exception ex)
+            else if (!int.TryParse(txtEdad.Text, out edad) || edad <= 18)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("La edad debe ser mayor a 18", "Edad invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!char.TryParse(cbxSexo.SelectedItem.ToString(), out sexo))
+            {
+                MessageBox.Show("El sexo seleccionado no es valido", "Sexo invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (!decimal.TryParse(txtSueldo.Text, out sueldoBruto))
+            {
+                MessageBox.Show("El sueldo seleccionado no es valido", "Sueldo invalido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (DateTime.Now.AddYears(-18) <= fechaNacimiento)
+            {
+                MessageBox.Show("La fecha de nacimiento debe ser de una persona mayor a 18 años", "Fecha de nacimiento inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    if (isEditing)
+                    {
+                        if (MessageBox.Show("Seguro que deseas actualizar este registro?", "Actualizar Empleado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Empleado empleado = new Empleado
+                            {
+                                Nombre = nombre,
+                                Apellido = apellido,
+                                Edad = edad,
+                                Sexo = sexo,
+                                FechaNacimiento = fechaNacimiento,
+                                PoseeLicencia = poseeLicencia,
+                                SueldoBruto = sueldoBruto,
+                                Id = int.Parse(lblId.Text)
+
+                            };
+
+                            empleadoRepository.ActualizarEmpleado(empleado);
+                            MessageBox.Show("Empleado actualizado correctamente!");
+                            employee.LoadEmployees();
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+
+                        if (MessageBox.Show("Seguro que deseas guardar este registro?", "Guardar Empleado!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            Empleado empleado = new Empleado
+                            {
+                                Nombre = nombre,
+                                Apellido = apellido,
+                                Edad = edad,
+                                Sexo = sexo,
+                                FechaNacimiento = fechaNacimiento,
+                                PoseeLicencia = poseeLicencia,
+                                SueldoBruto = sueldoBruto
+
+                            };
+
+                            empleadoRepository.InsertarEmpleado(empleado);
+                            MessageBox.Show("Empleado creado correctamente!");
+                            employee.LoadEmployees();
+                            this.Close();
+                        }
+
+
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
         }
 
@@ -101,5 +130,24 @@ namespace ProyectoNomina.Vistas.Empleados
         {
             this.Dispose();
         }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
     }
 }

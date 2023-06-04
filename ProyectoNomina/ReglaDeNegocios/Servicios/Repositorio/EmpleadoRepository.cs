@@ -13,16 +13,20 @@ namespace ReglaDeNegocios.Servicios.Repositorio
 {
     public class EmpleadoRepository:IEmpleadoRepository
     {
+        #region Atributo
         private readonly DBConnect db;
+        #endregion
 
-
+        #region Constructor
         public EmpleadoRepository()
         {
 
             db = new DBConnect();
 
         }
+        #endregion
 
+        #region CRUD de Empleados
         public void ActualizarEmpleado(Empleado empleado)
         {
             using (var conexion = db.GetConnection())
@@ -44,90 +48,12 @@ namespace ReglaDeNegocios.Servicios.Repositorio
             }
         }
 
-        public decimal CalcularISR(decimal sueldoBruto)
-        {
-            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
-            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
-            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
-            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
-
-            if (sueldoBruto <= 34685.00m)
-            {
-              return sueldoBruto;
-
-            }else if(sueldoBruto > 34685.00m && sueldoBruto <= 52027.42m)
-            {
-                
-                decimal montoEscala = 520270.42m;
-                decimal excedente = montoEscala - salarioNeto;
-                decimal tasaISR = excedente * 0.15m;
-                
-                return tasaISR;
-            }else if(sueldoBruto > 52027.42m && sueldoBruto <= 72260.25m)
-            {
-                
-                decimal montoEscala = 72260.25m + 2601.36m;
-                decimal excedente = montoEscala - salarioNeto;
-                decimal tasaISR = excedente * 0.20m;
-                return tasaISR;
-            }else if(sueldoBruto > 72260.25m)
-            {
-              
-                decimal montoEscala = 72260.25m + 6647.92m;
-                decimal excedente = montoEscala - salarioNeto;
-                decimal tasaISR = excedente * 0.25m;
-                return tasaISR;
-            }
-            return 0;
-        }
-
-        public decimal CalcularSueldoNeto(decimal sueldoBruto)
-        {
-            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
-            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
-            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
-            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
-
-            return salarioNeto;
-        }
-
-        public decimal CalcularTSS(decimal sueldoBruto)
-        {
-            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
-            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
-            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
-
-            return sumaDescuentoTSS;
-        }
-
-        public DataTable Consultar(SqlCommand comando)
-        {
-            try
-            {
-                using (var conexion = db.GetConnection())
-                {
-                    SqlDataReader dr;
-                    conexion.Open();
-                    comando.Connection = conexion;
-                    dr = comando.ExecuteReader();
-                    DataTable dt = new DataTable();
-                    dt.Load(dr);
-                    return dt;
-                }
-            }
-            catch (SqlException ex)
-            {
-
-                throw ex;
-            }
-        }
-
         public void EliminarEmpleado(int empleadoId)
         {
             using (var conexion = db.GetConnection())
             {
                 conexion.Open();
-                var comando = new SqlCommand("EliminarEmpleado",conexion);
+                var comando = new SqlCommand("EliminarEmpleado", conexion);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@Id", empleadoId);
@@ -153,6 +79,128 @@ namespace ReglaDeNegocios.Servicios.Repositorio
                 comando.Parameters.AddWithValue("@SueldoBruto", empleado.SueldoBruto);
 
                 comando.ExecuteNonQuery();
+            }
+        }
+
+        public DataTable ObtenerTodosLosEmpleados()
+        {
+            using (var conexion = db.GetConnection())
+            {
+                conexion.Open();
+                try
+                {
+                    var comando = new SqlCommand("ObtenerEmpleados", conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    DataTable dt = new DataTable();
+                    dt = Consultar(comando);
+                    return dt;
+                }
+                catch (SqlException ex)
+                {
+
+                    throw ex;
+                }
+            }
+        }
+        #endregion
+
+        #region Calculos de Nomina
+        public decimal CalcularISR(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
+
+            if (sueldoBruto <= 34685.00m)
+            {
+              return 0;
+
+            }else if(sueldoBruto > 34685.00m && sueldoBruto <= 52027.42m)
+            {
+                
+                decimal montoEscala = 52027.42m;
+                decimal excedente = montoEscala - salarioNeto;
+                decimal tasaISR = excedente * 0.15m;
+                
+                return tasaISR;
+            }else if(sueldoBruto > 52027.42m && sueldoBruto <= 72260.25m)
+            {
+                
+                decimal montoEscala = 72260.25m;
+                decimal excedente = montoEscala - salarioNeto;
+                decimal tasaISR = excedente * 0.20m;
+                decimal impuestoAdicional = tasaISR + 2601.36m;
+                return impuestoAdicional;
+            }else if(sueldoBruto > 72260.25m)
+            {
+              
+                decimal montoEscala = 72260.25m;
+                decimal excedente = salarioNeto - montoEscala;
+                decimal tasaISR = excedente * 0.25m;
+                decimal impuestoAdicional = tasaISR + 6647.92m;
+                return impuestoAdicional;
+            }
+            return 0;
+        }
+
+        public void CalcularNomina(int empleadoId, decimal isr, decimal tss, decimal sueldoNeto)
+        {
+            using(var conexion = db.GetConnection())
+            {
+                conexion.Open();
+                var comando = new SqlCommand("CalcularNomina", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Id", empleadoId);
+                comando.Parameters.AddWithValue("@ISR", isr);
+                comando.Parameters.AddWithValue("@TSS", tss);
+                comando.Parameters.AddWithValue("@SueldoNeto", sueldoNeto);
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
+        public decimal CalcularSueldoNeto(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+            decimal salarioNeto = sueldoBruto - sumaDescuentoTSS;
+
+            return salarioNeto;
+        }
+
+        public decimal CalcularTSS(decimal sueldoBruto)
+        {
+            decimal seguroFamiliarSalud = sueldoBruto * 0.0304m;
+            decimal aporteFondoPensiones = sueldoBruto * 0.0287m;
+            decimal sumaDescuentoTSS = seguroFamiliarSalud + aporteFondoPensiones;
+
+            return sumaDescuentoTSS;
+        }
+        #endregion
+
+        #region Reportes
+        public DataTable Consultar(SqlCommand comando)
+        {
+            try
+            {
+                using (var conexion = db.GetConnection())
+                {
+                    SqlDataReader dr;
+                    conexion.Open();
+                    comando.Connection = conexion;
+                    dr = comando.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    return dt;
+                }
+            }
+            catch (SqlException ex)
+            {
+
+                throw ex;
             }
         }
 
@@ -218,27 +266,66 @@ namespace ReglaDeNegocios.Servicios.Repositorio
                 }
             }
         }
+        #endregion
 
-        public DataTable ObtenerTodosLosEmpleados()
+        #region Usuarios
+        public bool IniciarSesion(UserLogin userLogin)
         {
             using (var conexion = db.GetConnection())
             {
                 conexion.Open();
-                try
-                {
-                    var comando = new SqlCommand("ObtenerEmpleados", conexion);
-                    comando.CommandType = CommandType.StoredProcedure;
-                    DataTable dt = new DataTable();
-                    dt = Consultar(comando);
-                    return dt;
-                }
-                catch (SqlException ex)
-                {
+                var comando = new SqlCommand("IniciarSesion", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
 
-                    throw ex;
-                }
+                comando.Parameters.AddWithValue("@UserName", userLogin.UserName);
+                comando.Parameters.AddWithValue("@Clave", userLogin.Clave);
+
+                var resultado = (bool)comando.ExecuteScalar();
+
+                return resultado;
             }
         }
+        
+        public void RegistrarUsuario(Usuario usuario)
+        {
+            using (var conexion = db.GetConnection())
+            {
+                conexion.Open();
+                var comando = new SqlCommand("RegistrarUsuario", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                comando.Parameters.AddWithValue("@UserName", usuario.UserName);
+                comando.Parameters.AddWithValue("@Clave", usuario.Clave);
+
+                comando.ExecuteNonQuery();
+            }
+        }
+
+        public void UsuarioCache(UsuarioLoginCache usuario)
+        {
+            using (var conexion = db.GetConnection())
+            {
+                conexion.Open();
+                var comando = new SqlCommand("UsuarioCache",conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@Id",usuario.Id);
+
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        usuario.Name = reader.GetString(0);
+                        usuario.UserName = reader.GetString(1);
+                    }
+                }
+                reader.Close();
+            }
+           
+        }
+        #endregion
     }
 }
 

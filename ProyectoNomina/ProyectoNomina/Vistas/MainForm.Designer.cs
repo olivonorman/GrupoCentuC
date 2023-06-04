@@ -40,6 +40,7 @@
             btnCreateEmployee = new Button();
             btnEmployees = new Button();
             panelLogo = new Panel();
+            lblId = new Label();
             lblUserName = new Label();
             lblName = new Label();
             pbxLogo = new PictureBox();
@@ -66,8 +67,9 @@
             panelSlide.Controls.Add(panelLogo);
             panelSlide.Dock = DockStyle.Left;
             panelSlide.Location = new Point(0, 0);
+            panelSlide.Margin = new Padding(4, 5, 4, 5);
             panelSlide.Name = "panelSlide";
-            panelSlide.Size = new Size(240, 503);
+            panelSlide.Size = new Size(343, 838);
             panelSlide.TabIndex = 0;
             // 
             // panelReports
@@ -77,9 +79,10 @@
             panelReports.Controls.Add(btnEmployeesWomen);
             panelReports.Controls.Add(btnEmployeesLisence);
             panelReports.Dock = DockStyle.Top;
-            panelReports.Location = new Point(0, 358);
+            panelReports.Location = new Point(0, 597);
+            panelReports.Margin = new Padding(4, 5, 4, 5);
             panelReports.Name = "panelReports";
-            panelReports.Size = new Size(240, 143);
+            panelReports.Size = new Size(343, 238);
             panelReports.TabIndex = 8;
             // 
             // btnEmployeeUpper50K
@@ -92,10 +95,11 @@
             btnEmployeeUpper50K.ForeColor = Color.White;
             btnEmployeeUpper50K.Image = (Image)resources.GetObject("btnEmployeeUpper50K.Image");
             btnEmployeeUpper50K.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmployeeUpper50K.Location = new Point(0, 90);
+            btnEmployeeUpper50K.Location = new Point(0, 150);
+            btnEmployeeUpper50K.Margin = new Padding(4, 5, 4, 5);
             btnEmployeeUpper50K.Name = "btnEmployeeUpper50K";
-            btnEmployeeUpper50K.Padding = new Padding(20, 0, 0, 0);
-            btnEmployeeUpper50K.Size = new Size(240, 45);
+            btnEmployeeUpper50K.Padding = new Padding(29, 0, 0, 0);
+            btnEmployeeUpper50K.Size = new Size(343, 75);
             btnEmployeeUpper50K.TabIndex = 7;
             btnEmployeeUpper50K.Text = "Empleados que ganan mas de $50,000";
             btnEmployeeUpper50K.TextAlign = ContentAlignment.MiddleLeft;
@@ -113,10 +117,11 @@
             btnEmployeesWomen.ForeColor = Color.White;
             btnEmployeesWomen.Image = (Image)resources.GetObject("btnEmployeesWomen.Image");
             btnEmployeesWomen.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmployeesWomen.Location = new Point(0, 45);
+            btnEmployeesWomen.Location = new Point(0, 75);
+            btnEmployeesWomen.Margin = new Padding(4, 5, 4, 5);
             btnEmployeesWomen.Name = "btnEmployeesWomen";
-            btnEmployeesWomen.Padding = new Padding(20, 0, 0, 0);
-            btnEmployeesWomen.Size = new Size(240, 45);
+            btnEmployeesWomen.Padding = new Padding(29, 0, 0, 0);
+            btnEmployeesWomen.Size = new Size(343, 75);
             btnEmployeesWomen.TabIndex = 5;
             btnEmployeesWomen.Text = "Empleados que son mujeres";
             btnEmployeesWomen.TextAlign = ContentAlignment.MiddleLeft;
@@ -135,9 +140,10 @@
             btnEmployeesLisence.Image = (Image)resources.GetObject("btnEmployeesLisence.Image");
             btnEmployeesLisence.ImageAlign = ContentAlignment.MiddleLeft;
             btnEmployeesLisence.Location = new Point(0, 0);
+            btnEmployeesLisence.Margin = new Padding(4, 5, 4, 5);
             btnEmployeesLisence.Name = "btnEmployeesLisence";
-            btnEmployeesLisence.Padding = new Padding(20, 0, 0, 0);
-            btnEmployeesLisence.Size = new Size(240, 45);
+            btnEmployeesLisence.Padding = new Padding(29, 0, 0, 0);
+            btnEmployeesLisence.Size = new Size(343, 75);
             btnEmployeesLisence.TabIndex = 6;
             btnEmployeesLisence.Text = "Empleados que poseen licencia";
             btnEmployeesLisence.TextAlign = ContentAlignment.MiddleLeft;
@@ -154,10 +160,11 @@
             btnReport.ForeColor = Color.White;
             btnReport.Image = (Image)resources.GetObject("btnReport.Image");
             btnReport.ImageAlign = ContentAlignment.MiddleLeft;
-            btnReport.Location = new Point(0, 306);
+            btnReport.Location = new Point(0, 510);
+            btnReport.Margin = new Padding(4, 5, 4, 5);
             btnReport.Name = "btnReport";
-            btnReport.Padding = new Padding(5, 0, 0, 0);
-            btnReport.Size = new Size(240, 52);
+            btnReport.Padding = new Padding(7, 0, 0, 0);
+            btnReport.Size = new Size(343, 87);
             btnReport.TabIndex = 6;
             btnReport.Text = "Reportes";
             btnReport.TextAlign = ContentAlignment.MiddleLeft;
@@ -171,9 +178,10 @@
             panelEmployees.Controls.Add(btnCalcularNomina);
             panelEmployees.Controls.Add(btnCreateEmployee);
             panelEmployees.Dock = DockStyle.Top;
-            panelEmployees.Location = new Point(0, 216);
+            panelEmployees.Location = new Point(0, 360);
+            panelEmployees.Margin = new Padding(4, 5, 4, 5);
             panelEmployees.Name = "panelEmployees";
-            panelEmployees.Size = new Size(240, 90);
+            panelEmployees.Size = new Size(343, 150);
             panelEmployees.TabIndex = 5;
             // 
             // btnCalcularNomina
@@ -186,10 +194,11 @@
             btnCalcularNomina.ForeColor = Color.White;
             btnCalcularNomina.Image = (Image)resources.GetObject("btnCalcularNomina.Image");
             btnCalcularNomina.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCalcularNomina.Location = new Point(0, 45);
+            btnCalcularNomina.Location = new Point(0, 75);
+            btnCalcularNomina.Margin = new Padding(4, 5, 4, 5);
             btnCalcularNomina.Name = "btnCalcularNomina";
-            btnCalcularNomina.Padding = new Padding(20, 0, 0, 0);
-            btnCalcularNomina.Size = new Size(240, 45);
+            btnCalcularNomina.Padding = new Padding(29, 0, 0, 0);
+            btnCalcularNomina.Size = new Size(343, 75);
             btnCalcularNomina.TabIndex = 4;
             btnCalcularNomina.Text = "Calcular Nomina";
             btnCalcularNomina.TextAlign = ContentAlignment.MiddleLeft;
@@ -208,9 +217,10 @@
             btnCreateEmployee.Image = (Image)resources.GetObject("btnCreateEmployee.Image");
             btnCreateEmployee.ImageAlign = ContentAlignment.MiddleLeft;
             btnCreateEmployee.Location = new Point(0, 0);
+            btnCreateEmployee.Margin = new Padding(4, 5, 4, 5);
             btnCreateEmployee.Name = "btnCreateEmployee";
-            btnCreateEmployee.Padding = new Padding(20, 0, 0, 0);
-            btnCreateEmployee.Size = new Size(240, 45);
+            btnCreateEmployee.Padding = new Padding(29, 0, 0, 0);
+            btnCreateEmployee.Size = new Size(343, 75);
             btnCreateEmployee.TabIndex = 3;
             btnCreateEmployee.Text = "Crear Empleados";
             btnCreateEmployee.TextAlign = ContentAlignment.MiddleLeft;
@@ -227,10 +237,11 @@
             btnEmployees.ForeColor = Color.White;
             btnEmployees.Image = (Image)resources.GetObject("btnEmployees.Image");
             btnEmployees.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEmployees.Location = new Point(0, 164);
+            btnEmployees.Location = new Point(0, 273);
+            btnEmployees.Margin = new Padding(4, 5, 4, 5);
             btnEmployees.Name = "btnEmployees";
-            btnEmployees.Padding = new Padding(5, 0, 0, 0);
-            btnEmployees.Size = new Size(240, 52);
+            btnEmployees.Padding = new Padding(7, 0, 0, 0);
+            btnEmployees.Size = new Size(343, 87);
             btnEmployees.TabIndex = 5;
             btnEmployees.Text = "Empleados";
             btnEmployees.TextAlign = ContentAlignment.MiddleLeft;
@@ -240,44 +251,64 @@
             // 
             // panelLogo
             // 
+            panelLogo.Controls.Add(lblId);
             panelLogo.Controls.Add(lblUserName);
             panelLogo.Controls.Add(lblName);
             panelLogo.Controls.Add(pbxLogo);
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(4, 5, 4, 5);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(240, 164);
+            panelLogo.Size = new Size(343, 273);
             panelLogo.TabIndex = 1;
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblId.ForeColor = Color.White;
+            lblId.Location = new Point(17, 120);
+            lblId.Margin = new Padding(4, 0, 4, 0);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(0, 25);
+            lblId.TabIndex = 4;
+            lblId.Visible = false;
             // 
             // lblUserName
             // 
             lblUserName.AutoSize = true;
             lblUserName.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserName.ForeColor = Color.White;
-            lblUserName.Location = new Point(89, 129);
+            lblUserName.Location = new Point(127, 215);
+            lblUserName.Margin = new Padding(4, 0, 4, 0);
             lblUserName.Name = "lblUserName";
-            lblUserName.Size = new Size(73, 16);
+            lblUserName.Size = new Size(105, 25);
             lblUserName.TabIndex = 3;
             lblUserName.Text = "UserName";
+            lblUserName.Visible = false;
             // 
             // lblName
             // 
             lblName.AutoSize = true;
             lblName.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(12, 98);
+            lblName.Location = new Point(17, 167);
+            lblName.Margin = new Padding(4, 0, 4, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(44, 16);
+            lblName.Size = new Size(64, 25);
             lblName.TabIndex = 2;
             lblName.Text = "Name";
+            lblName.Visible = false;
             // 
             // pbxLogo
             // 
             pbxLogo.Anchor = AnchorStyles.Top;
             pbxLogo.Image = (Image)resources.GetObject("pbxLogo.Image");
-            pbxLogo.Location = new Point(89, 12);
+            pbxLogo.Location = new Point(127, 20);
+            pbxLogo.Margin = new Padding(4, 5, 4, 5);
             pbxLogo.Name = "pbxLogo";
-            pbxLogo.Size = new Size(73, 75);
+            pbxLogo.Size = new Size(104, 125);
+            pbxLogo.SizeMode = PictureBoxSizeMode.CenterImage;
             pbxLogo.TabIndex = 1;
             pbxLogo.TabStop = false;
             // 
@@ -286,9 +317,10 @@
             panelMain.Controls.Add(panelTitle);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panelMain.Location = new Point(240, 0);
+            panelMain.Location = new Point(343, 0);
+            panelMain.Margin = new Padding(4, 5, 4, 5);
             panelMain.Name = "panelMain";
-            panelMain.Size = new Size(958, 503);
+            panelMain.Size = new Size(1368, 838);
             panelMain.TabIndex = 2;
             // 
             // panelTitle
@@ -297,8 +329,9 @@
             panelTitle.Controls.Add(lblTitle);
             panelTitle.Dock = DockStyle.Top;
             panelTitle.Location = new Point(0, 0);
+            panelTitle.Margin = new Padding(4, 5, 4, 5);
             panelTitle.Name = "panelTitle";
-            panelTitle.Size = new Size(958, 50);
+            panelTitle.Size = new Size(1368, 83);
             panelTitle.TabIndex = 0;
             // 
             // lblTitle
@@ -307,19 +340,21 @@
             lblTitle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(0, 0);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(958, 50);
+            lblTitle.Size = new Size(1368, 83);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Nomina";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1198, 503);
+            ClientSize = new Size(1711, 838);
             Controls.Add(panelMain);
             Controls.Add(panelSlide);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "MainForm";
             Text = "FormPrincipal";
             panelSlide.ResumeLayout(false);
@@ -355,5 +390,6 @@
         private PictureBox pbxLogo;
         public Label lblUserName;
         public Label lblName;
+        public Label lblId;
     }
 }

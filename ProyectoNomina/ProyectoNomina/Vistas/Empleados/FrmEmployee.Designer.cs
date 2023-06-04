@@ -33,6 +33,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEmployee));
             dgvEmployees = new DataGridView();
+            panelEmployees1 = new Panel();
+            btnAgregar = new Button();
             Id = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Apellido = new DataGridViewTextBoxColumn();
@@ -43,8 +45,6 @@
             SueldoBruto = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            panelEmployees1 = new Panel();
-            btnAgregar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvEmployees).BeginInit();
             panelEmployees1.SuspendLayout();
             SuspendLayout();
@@ -77,7 +77,6 @@
             dgvEmployees.EnableHeadersVisualStyles = false;
             dgvEmployees.GridColor = SystemColors.ControlDark;
             dgvEmployees.Location = new Point(0, 0);
-            dgvEmployees.Margin = new Padding(2);
             dgvEmployees.Name = "dgvEmployees";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -88,91 +87,22 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvEmployees.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvEmployees.RowHeadersVisible = false;
+            dgvEmployees.RowHeadersWidth = 62;
             dgvEmployees.RowTemplate.Height = 25;
-            dgvEmployees.Size = new Size(1198, 503);
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEmployees.Size = new Size(1711, 838);
             dgvEmployees.TabIndex = 0;
             dgvEmployees.CellContentClick += dgvEmployees_CellContentClick;
-            // 
-            // Id
-            // 
-            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.Width = 47;
-            // 
-            // Nombre
-            // 
-            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Nombre.FillWeight = 158.064484F;
-            Nombre.HeaderText = "Nombre";
-            Nombre.Name = "Nombre";
-            // 
-            // Apellido
-            // 
-            Apellido.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Apellido.FillWeight = 127.396713F;
-            Apellido.HeaderText = "Apellido";
-            Apellido.Name = "Apellido";
-            // 
-            // Edad
-            // 
-            Edad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Edad.FillWeight = 78.36636F;
-            Edad.HeaderText = "Edad";
-            Edad.Name = "Edad";
-            // 
-            // Sexo
-            // 
-            Sexo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Sexo.FillWeight = 33.83269F;
-            Sexo.HeaderText = "Sexo";
-            Sexo.Name = "Sexo";
-            // 
-            // FechaNacimiento
-            // 
-            FechaNacimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            FechaNacimiento.FillWeight = 190.803436F;
-            FechaNacimiento.HeaderText = "FechaNacimiento";
-            FechaNacimiento.Name = "FechaNacimiento";
-            // 
-            // PoseeLicencia
-            // 
-            PoseeLicencia.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            PoseeLicencia.FillWeight = 36.0349731F;
-            PoseeLicencia.HeaderText = "PoseeLicencia";
-            PoseeLicencia.Name = "PoseeLicencia";
-            // 
-            // SueldoBruto
-            // 
-            SueldoBruto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            SueldoBruto.FillWeight = 75.5012741F;
-            SueldoBruto.HeaderText = "SueldoBruto";
-            SueldoBruto.Name = "SueldoBruto";
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.Name = "Edit";
-            Edit.Width = 5;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "";
-            Delete.Image = (Image)resources.GetObject("Delete.Image");
-            Delete.Name = "Delete";
-            Delete.Width = 5;
             // 
             // panelEmployees1
             // 
             panelEmployees1.BackColor = Color.FromArgb(0, 70, 160);
             panelEmployees1.Controls.Add(btnAgregar);
             panelEmployees1.Dock = DockStyle.Bottom;
-            panelEmployees1.Location = new Point(0, 421);
+            panelEmployees1.Location = new Point(0, 701);
+            panelEmployees1.Margin = new Padding(4, 5, 4, 5);
             panelEmployees1.Name = "panelEmployees1";
-            panelEmployees1.Size = new Size(1198, 82);
+            panelEmployees1.Size = new Size(1711, 137);
             panelEmployees1.TabIndex = 4;
             // 
             // btnAgregar
@@ -182,21 +112,104 @@
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
-            btnAgregar.Location = new Point(1123, 0);
-            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Location = new Point(1604, 0);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 82);
+            btnAgregar.Size = new Size(107, 137);
             btnAgregar.TabIndex = 0;
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += button1_Click;
             // 
+            // Id
+            // 
+            Id.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Id.HeaderText = "Id";
+            Id.MinimumWidth = 8;
+            Id.Name = "Id";
+            Id.Width = 67;
+            // 
+            // Nombre
+            // 
+            Nombre.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Nombre.FillWeight = 158.064484F;
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 8;
+            Nombre.Name = "Nombre";
+            // 
+            // Apellido
+            // 
+            Apellido.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Apellido.FillWeight = 127.396713F;
+            Apellido.HeaderText = "Apellido";
+            Apellido.MinimumWidth = 8;
+            Apellido.Name = "Apellido";
+            // 
+            // Edad
+            // 
+            Edad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Edad.FillWeight = 78.36636F;
+            Edad.HeaderText = "Edad";
+            Edad.MinimumWidth = 8;
+            Edad.Name = "Edad";
+            // 
+            // Sexo
+            // 
+            Sexo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Sexo.FillWeight = 33.83269F;
+            Sexo.HeaderText = "Sexo";
+            Sexo.MinimumWidth = 8;
+            Sexo.Name = "Sexo";
+            // 
+            // FechaNacimiento
+            // 
+            FechaNacimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FechaNacimiento.FillWeight = 190.803436F;
+            FechaNacimiento.HeaderText = "FechaNacimiento";
+            FechaNacimiento.MinimumWidth = 8;
+            FechaNacimiento.Name = "FechaNacimiento";
+            // 
+            // PoseeLicencia
+            // 
+            PoseeLicencia.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            PoseeLicencia.FillWeight = 36.0349731F;
+            PoseeLicencia.HeaderText = "PoseeLicencia";
+            PoseeLicencia.MinimumWidth = 8;
+            PoseeLicencia.Name = "PoseeLicencia";
+            PoseeLicencia.Resizable = DataGridViewTriState.True;
+            // 
+            // SueldoBruto
+            // 
+            SueldoBruto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            SueldoBruto.FillWeight = 75.5012741F;
+            SueldoBruto.HeaderText = "SueldoBruto";
+            SueldoBruto.MinimumWidth = 8;
+            SueldoBruto.Name = "SueldoBruto";
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 8;
+            Edit.Name = "Edit";
+            Edit.Width = 8;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 8;
+            Delete.Name = "Delete";
+            Delete.Width = 8;
+            // 
             // FrmEmployee
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1198, 503);
+            ClientSize = new Size(1711, 838);
             Controls.Add(panelEmployees1);
             Controls.Add(dgvEmployees);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FrmEmployee";
             Text = "Crear empleados";
             ((System.ComponentModel.ISupportInitialize)dgvEmployees).EndInit();

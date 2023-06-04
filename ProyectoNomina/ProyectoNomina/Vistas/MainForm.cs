@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using ProyectoNomina.Vistas;
 using ProyectoNomina.Vistas.Empleados;
 using ProyectoNomina.Vistas.Reportes;
+using ReglaDeNegocios.Entidad;
 using ReglaDeNegocios.Servicios.Interfaz;
 
 namespace ProyectoNomina
@@ -24,6 +25,25 @@ namespace ProyectoNomina
         {
             panelEmployees.Visible = false;
             panelReports.Visible = false;
+            //LoadUserData();
+        }
+
+        private void LoadUserData()
+        {
+            var nombre = lblName.Text;
+            var userName = lblUserName.Text;
+            var id = Convert.ToInt32(lblId.Text);
+            if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(userName))
+            {
+                UsuarioLoginCache usuarioLogin = new UsuarioLoginCache
+                {
+                    Id = id,
+                    Name = nombre,
+                    UserName = userName
+                };
+                empleadoRepository.UsuarioCache(usuarioLogin);
+            }
+
         }
 
         private void hideSubmenu()
@@ -109,7 +129,8 @@ namespace ProyectoNomina
 
         private void btnCalcularNomina_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new FrmCalcularNomina(empleadoRepository));
+            hideSubmenu();
         }
     }
 }
