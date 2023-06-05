@@ -269,7 +269,7 @@ namespace ReglaDeNegocios.Servicios.Repositorio
         #endregion
 
         #region Usuarios
-        public bool IniciarSesion(UserLogin userLogin)
+        public Usuario IniciarSesion(UserLogin userLogin)
         {
             using (var conexion = db.GetConnection())
             {
@@ -280,10 +280,22 @@ namespace ReglaDeNegocios.Servicios.Repositorio
                 comando.Parameters.AddWithValue("@UserName", userLogin.UserName);
                 comando.Parameters.AddWithValue("@Clave", userLogin.Clave);
 
-                var resultado = (bool)comando.ExecuteScalar();
+                SqlDataReader reader = comando.ExecuteReader();
+                if (reader.HasRows && reader.Read())
+                {
+                        Usuario usuario = new Usuario
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            UserName = reader.GetString(2)
+                        };
+                        return usuario;
+                }
+                reader.Close();
 
-                return resultado;
+                
             }
+            return null;
         }
         
         public void RegistrarUsuario(Usuario usuario)
@@ -302,30 +314,7 @@ namespace ReglaDeNegocios.Servicios.Repositorio
             }
         }
 
-        public void UsuarioCache(UsuarioLoginCache usuario)
-        {
-            using (var conexion = db.GetConnection())
-            {
-                conexion.Open();
-                var comando = new SqlCommand("UsuarioCache",conexion);
-                comando.CommandType = CommandType.StoredProcedure;
-
-                comando.Parameters.AddWithValue("@Id",usuario.Id);
-
-                SqlDataReader reader = comando.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    while (reader.Read())
-                    {
-                        usuario.Name = reader.GetString(0);
-                        usuario.UserName = reader.GetString(1);
-                    }
-                }
-                reader.Close();
-            }
-           
-        }
-        #endregion
+       #endregion
     }
 }
 

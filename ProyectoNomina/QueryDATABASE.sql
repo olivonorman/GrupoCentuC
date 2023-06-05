@@ -124,23 +124,24 @@ END
 
 GO
 --Procedimiento para iniciar sesion.
-CREATE or ALTER PROCEDURE IniciarSesion
+ALTER PROCEDURE IniciarSesion
 @UserName NVARCHAR(50),
 @Clave NVARCHAR(50)
 AS
 BEGIN
-DECLARE @Valido BIT
-IF EXISTS(SELECT * FROM Usuario WHERE UserName = @UserName AND Clave = @Clave)
-	SET @Valido = 1
-ELSE
-	SET @Valido = 0
-
-	SELECT @Valido as EsValido
+ IF EXISTS(SELECT * FROM Usuario WHERE UserName = @UserName AND Clave = @Clave)
+ BEGIN
+	SELECT Id,Nombre,UserName FROM Usuario WHERE UserName = @UserName;
+	END
+	ELSE
+	BEGIN
+	SELECT NULL AS Id, NULL AS Nombre, NULL AS UserName;
+	END
 END
 
 GO
 --Procedimiento para registrar un usuario
-CREATE OR ALTER PROCEDURE RegistrarUsuario
+CREATE PROCEDURE RegistrarUsuario
 @Nombre NVARCHAR(50),
 @UserName NVARCHAR(50),
 @Clave NVARCHAR(50)
@@ -150,10 +151,4 @@ INSERT INTO Usuario(Nombre,UserName,Clave)
 VALUES(@Nombre,@UserName,@Clave)
 END
 GO
-CREATE OR ALTER PROCEDURE UsuarioCache
-@Id INT
-AS
-BEGIN
-SELECT Nombre,UserName FROM Usuario WHERE Id = @Id
-END
-GO
+

@@ -2,6 +2,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using ProyectoNomina.Vistas;
 using ProyectoNomina.Vistas.Empleados;
+using ProyectoNomina.Vistas.Login;
 using ProyectoNomina.Vistas.Reportes;
 using ReglaDeNegocios.Entidad;
 using ReglaDeNegocios.Servicios.Interfaz;
@@ -12,40 +13,23 @@ namespace ProyectoNomina
     {
         private Form activeForm = null;
         private readonly IEmpleadoRepository empleadoRepository;
+
         public MainForm(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             customizeDesign();
             this.empleadoRepository = empleadoRepository;
+           
         }
 
 
-
+        #region Metodos privados para el menu
         private void customizeDesign()
         {
             panelEmployees.Visible = false;
             panelReports.Visible = false;
-            //LoadUserData();
-        }
-
-        private void LoadUserData()
-        {
-            var nombre = lblName.Text;
-            var userName = lblUserName.Text;
-            var id = Convert.ToInt32(lblId.Text);
-            if (!string.IsNullOrEmpty(nombre) && !string.IsNullOrEmpty(userName))
-            {
-                UsuarioLoginCache usuarioLogin = new UsuarioLoginCache
-                {
-                    Id = id,
-                    Name = nombre,
-                    UserName = userName
-                };
-                empleadoRepository.UsuarioCache(usuarioLogin);
-            }
 
         }
-
         private void hideSubmenu()
         {
             if (panelEmployees.Visible == true)
@@ -90,7 +74,9 @@ namespace ProyectoNomina
             childForm.Show();
         }
 
+        #endregion
 
+        #region Codigo de los botones
 
         private void btnEmployees_Click(object sender, EventArgs e)
         {
@@ -132,5 +118,20 @@ namespace ProyectoNomina
             openChildForm(new FrmCalcularNomina(empleadoRepository));
             hideSubmenu();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que deseas cerrar la sesion?", "Cerrar Sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmLogin frmLogin = new FrmLogin(empleadoRepository);
+                frmLogin.Show();
+                this.Hide();
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+        #endregion
     }
 }

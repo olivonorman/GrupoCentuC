@@ -50,10 +50,17 @@ namespace ProyectoNomina.Vistas.Login
                         UserName = usuario,
                         Clave = clave
                     };
-                    bool inicioSesionExistoso = empleadoRepository.IniciarSesion(userLogin);
-                    if (inicioSesionExistoso)
+
+                    Usuario usuarioAutenticado = empleadoRepository.IniciarSesion(userLogin);
+
+                    if (usuarioAutenticado != null)
                     {
+                       
                         MainForm mainForm = new MainForm(empleadoRepository);
+                        mainForm.lblName.Text = "Bienvenido " + usuarioAutenticado.Nombre;
+                        mainForm.lblUserName.Text = usuarioAutenticado.UserName;
+                        mainForm.lblId.Text = usuarioAutenticado.Id.ToString();
+
                         mainForm.Show();
                         mainForm.FormClosed += Logout;
                         this.Hide();
@@ -94,6 +101,11 @@ namespace ProyectoNomina.Vistas.Login
             FrmRegistrar registrar = new FrmRegistrar(empleadoRepository);
             registrar.Show();
             this.Hide();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

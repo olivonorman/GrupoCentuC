@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,8 +35,11 @@ namespace ProyectoNomina.Vistas.Empleados
             foreach (DataRow row in dataTable.Rows)
             {
                 i++;
+                string sexo = row["Sexo"].ToString();
+                string sexoTexto = (sexo == "M") ? "Masculino" : (sexo == "F") ? "Femenino" : "";
+                string poseeLicencia = row["PoseeLicencia"].ToString() == "True" ? "Si" : "No";
                 dgvEmployees.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString(),
-                    row["Sexo"].ToString(), row["FechaNacimiento"].ToString(), row["PoseeLicencia"].ToString(), row["SueldoBruto"].ToString());
+                    sexoTexto, Convert.ToDateTime(row["FechaNacimiento"]).Date.ToString("dd/MM/yyyy"), poseeLicencia, row["SueldoBruto"].ToString());
             }
         }
 
@@ -83,6 +87,17 @@ namespace ProyectoNomina.Vistas.Empleados
             }
         }
 
-       
+        private void dgvEmployees_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvEmployees.Columns[e.ColumnIndex].Name == "SueldoBruto")
+            {
+                if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal sueldoBruto))
+                {
+                    CultureInfo cultureInfo = new CultureInfo("es-DO");
+                    e.Value = sueldoBruto.ToString("C",cultureInfo);
+                    e.FormattingApplied = true;
+                }
+            }
+        }
     }
 }

@@ -128,6 +128,7 @@
             ClientSize = new Size(653, 436);
             Controls.Add(DgvEmployeesLicense);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmEmployeesLicense";
             Text = "Reporte de empleados que poseen licencia";
             ((System.ComponentModel.ISupportInitialize)DgvEmployeesLicense).EndInit();

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using ProyectoNomina.Vistas.Login;
 using ReglaDeNegocios.Entidad;
 using ReglaDeNegocios.Servicios.Interfaz;
 using System;
@@ -123,12 +124,32 @@ namespace ProyectoNomina.Vistas.Empleados
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                employee.Show();
+                this.Close();
+
+            }
+            else
+            {
+                this.Show();
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                employee.Show();
+                this.Close();
+
+            }
+            else
+            {
+                this.Show();
+            }
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
@@ -147,7 +168,9 @@ namespace ProyectoNomina.Vistas.Empleados
             }
         }
 
+        private void FrmCreateEmployee_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

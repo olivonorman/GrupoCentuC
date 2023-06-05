@@ -24,9 +24,8 @@ namespace ReglaDeNegocios.Servicios.Interfaz
         decimal CalcularTSS(decimal sueldoBruto);  
         decimal CalcularSueldoNeto(decimal sueldoBruto);
         void CalcularNomina(int empleadoId, decimal isr, decimal tss, decimal sueldoNeto);
-        bool IniciarSesion(UserLogin userLogin);
+        Usuario IniciarSesion(UserLogin userLogin);
         void RegistrarUsuario(Usuario usuario);
-        void UsuarioCache(UsuarioLoginCache usuario);
         #endregion
     }
 }

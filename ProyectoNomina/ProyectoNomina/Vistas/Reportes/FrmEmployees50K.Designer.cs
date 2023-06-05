@@ -83,6 +83,7 @@
             dgvReport50K.RowTemplate.Height = 25;
             dgvReport50K.Size = new Size(653, 436);
             dgvReport50K.TabIndex = 0;
+            dgvReport50K.CellFormatting += dgvReport50K_CellFormatting;
             // 
             // Id
             // 
@@ -115,15 +116,15 @@
             // 
             // FechaNacimiento
             // 
+            FechaNacimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             FechaNacimiento.HeaderText = "FechaNacimiento";
             FechaNacimiento.Name = "FechaNacimiento";
-            FechaNacimiento.Width = 150;
             // 
             // SueldoBruto
             // 
+            SueldoBruto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SueldoBruto.HeaderText = "SueldoBruto";
             SueldoBruto.Name = "SueldoBruto";
-            SueldoBruto.Width = 150;
             // 
             // panel1
             // 
@@ -141,6 +142,7 @@
             ClientSize = new Size(653, 436);
             Controls.Add(panel1);
             Controls.Add(dgvReport50K);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmEmployees50K";
             Text = "Reporte de Salario mayor a $50,000";
             ((System.ComponentModel.ISupportInitialize)dgvReport50K).EndInit();

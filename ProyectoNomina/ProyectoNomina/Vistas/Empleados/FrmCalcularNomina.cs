@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,22 @@ namespace ProyectoNomina.Vistas.Empleados
 
             MessageBox.Show("La nómina ha sido calculada para los empleados seleccionados.");
             LoadCalcularNomina();
+        }
+
+        private void dgvCalculoNomina_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            string[] columnNames = { "SueldoBruto", "ISR", "TSS", "SueldoNeto" };
+
+            if (columnNames.Contains(dgvCalculoNomina.Columns[e.ColumnIndex].Name))
+            {
+                if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal precio))
+                {
+                        CultureInfo culture = new CultureInfo("es-DO");
+                        e.Value = precio.ToString("C",culture);
+                        e.FormattingApplied = true;
+                 
+                }
+            }
         }
     }
 }

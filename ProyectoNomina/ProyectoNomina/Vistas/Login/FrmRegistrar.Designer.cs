@@ -41,6 +41,10 @@
             txtPassword = new TextBox();
             btnGuardar = new Button();
             btnCancelar = new Button();
+            panel3 = new Panel();
+            panel2 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             SuspendLayout();
@@ -53,14 +57,14 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(720, 63);
+            panel1.Size = new Size(494, 63);
             panel1.TabIndex = 0;
             // 
             // picClose
             // 
             picClose.Dock = DockStyle.Right;
             picClose.Image = (Image)resources.GetObject("picClose.Image");
-            picClose.Location = new Point(670, 0);
+            picClose.Location = new Point(444, 0);
             picClose.Name = "picClose";
             picClose.Size = new Size(50, 63);
             picClose.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -71,12 +75,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Dock = DockStyle.Left;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(0, 0);
+            label1.Location = new Point(0, 16);
             label1.Name = "label1";
-            label1.Size = new Size(113, 28);
+            label1.Size = new Size(74, 19);
             label1.TabIndex = 0;
             label1.Text = "Registrar";
             // 
@@ -84,9 +87,9 @@
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblId.Location = new Point(16, 91);
+            lblId.Location = new Point(84, 91);
             lblId.Name = "lblId";
-            lblId.Size = new Size(39, 25);
+            lblId.Size = new Size(28, 20);
             lblId.TabIndex = 1;
             lblId.Text = "Id:";
             lblId.Visible = false;
@@ -95,9 +98,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(16, 152);
+            label2.Location = new Point(84, 162);
             label2.Name = "label2";
-            label2.Size = new Size(106, 25);
+            label2.Size = new Size(72, 20);
             label2.TabIndex = 2;
             label2.Text = "Nombre:";
             // 
@@ -105,9 +108,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(16, 209);
+            label3.Location = new Point(84, 219);
             label3.Name = "label3";
-            label3.Size = new Size(95, 25);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 3;
             label3.Text = "Usuario:";
             // 
@@ -115,34 +118,34 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(16, 266);
+            label4.Location = new Point(84, 276);
             label4.Name = "label4";
-            label4.Size = new Size(84, 25);
+            label4.Size = new Size(58, 20);
             label4.TabIndex = 4;
             label4.Text = "Clave:";
             // 
             // txtName
             // 
             txtName.Cursor = Cursors.IBeam;
-            txtName.Location = new Point(155, 154);
+            txtName.Location = new Point(223, 164);
             txtName.Name = "txtName";
-            txtName.Size = new Size(553, 26);
+            txtName.Size = new Size(181, 20);
             txtName.TabIndex = 5;
             // 
             // txtUserName
             // 
             txtUserName.Cursor = Cursors.IBeam;
-            txtUserName.Location = new Point(155, 211);
+            txtUserName.Location = new Point(223, 221);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(553, 26);
+            txtUserName.Size = new Size(181, 20);
             txtUserName.TabIndex = 6;
             // 
             // txtPassword
             // 
             txtPassword.Cursor = Cursors.IBeam;
-            txtPassword.Location = new Point(155, 265);
+            txtPassword.Location = new Point(223, 275);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(553, 26);
+            txtPassword.Size = new Size(181, 20);
             txtPassword.TabIndex = 7;
             // 
             // btnGuardar
@@ -152,11 +155,14 @@
             btnGuardar.FlatStyle = FlatStyle.Flat;
             btnGuardar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(447, 369);
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(221, 369);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(125, 34);
             btnGuardar.TabIndex = 8;
             btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
@@ -167,20 +173,59 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Location = new Point(583, 369);
+            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(357, 369);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(125, 34);
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 70, 160);
+            panel3.Location = new Point(27, 136);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(436, 1);
+            panel3.TabIndex = 18;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 70, 160);
+            panel2.Location = new Point(28, 327);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(436, 1);
+            panel2.TabIndex = 19;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(0, 70, 160);
+            panel4.Location = new Point(27, 136);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1, 192);
+            panel4.TabIndex = 20;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(0, 70, 160);
+            panel5.Location = new Point(462, 136);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(1, 192);
+            panel5.TabIndex = 21;
+            // 
             // FrmRegistrar
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(720, 425);
+            ClientSize = new Size(494, 425);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel2);
+            Controls.Add(panel3);
             Controls.Add(btnCancelar);
             Controls.Add(btnGuardar);
             Controls.Add(txtPassword);
@@ -218,5 +263,9 @@
         public TextBox txtPassword;
         private Button btnGuardar;
         private Button btnCancelar;
+        private Panel panel3;
+        private Panel panel2;
+        private Panel panel4;
+        private Panel panel5;
     }
 }

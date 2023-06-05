@@ -32,8 +32,10 @@ namespace ProyectoNomina.Vistas.Reportes
             foreach (DataRow row in dt.Rows)
             {
                 i++;
+                string sexo = row["Sexo"].ToString();
+                string sexoTexto = (sexo == "M") ? "Masculino" : (sexo == "F") ? "Femenino" : "";
                 DgvEmployeesLicense.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString(),
-                    row["Sexo"].ToString(), row["FechaNacimiento"].ToString());
+                    sexoTexto, Convert.ToDateTime(row["FechaNacimiento"]).Date.ToString("dd/MM/yyyy"));
             }
         }
     }

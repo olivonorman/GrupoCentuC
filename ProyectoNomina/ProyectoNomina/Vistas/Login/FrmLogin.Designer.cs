@@ -56,8 +56,9 @@
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(542, 63);
+            panel1.Size = new Size(379, 38);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -65,9 +66,10 @@
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(3, 15);
+            label1.Location = new Point(2, 9);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(74, 28);
+            label1.Size = new Size(51, 19);
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
@@ -75,10 +77,9 @@
             // 
             pictureBox1.BackColor = Color.White;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(201, 86);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Location = new Point(141, 52);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(165, 118);
+            pictureBox1.Size = new Size(116, 71);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -87,8 +88,7 @@
             // 
             pictureBox2.BackColor = Color.White;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(102, 309);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Location = new Point(71, 185);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(32, 32);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -99,8 +99,7 @@
             // 
             pictureBox3.BackColor = Color.White;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(102, 400);
-            pictureBox3.Margin = new Padding(4, 5, 4, 5);
+            pictureBox3.Location = new Point(71, 240);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(32, 32);
             pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -112,9 +111,10 @@
             label2.AutoSize = true;
             label2.Font = new Font("Bauhaus 93", 24F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(0, 70, 160);
-            label2.Location = new Point(195, 228);
+            label2.Location = new Point(136, 137);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(166, 54);
+            label2.Size = new Size(114, 36);
             label2.TabIndex = 4;
             label2.Text = "LOG IN";
             // 
@@ -124,9 +124,10 @@
             lblErrorMessage.BackColor = Color.White;
             lblErrorMessage.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblErrorMessage.ForeColor = Color.DarkGray;
-            lblErrorMessage.Location = new Point(66, 483);
+            lblErrorMessage.Location = new Point(46, 290);
+            lblErrorMessage.Margin = new Padding(2, 0, 2, 0);
             lblErrorMessage.Name = "lblErrorMessage";
-            lblErrorMessage.Size = new Size(156, 26);
+            lblErrorMessage.Size = new Size(100, 16);
             lblErrorMessage.TabIndex = 5;
             lblErrorMessage.Text = "Error Message";
             lblErrorMessage.Visible = false;
@@ -136,11 +137,10 @@
             txtUserName.BorderStyle = BorderStyle.None;
             txtUserName.Cursor = Cursors.IBeam;
             txtUserName.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUserName.Location = new Point(171, 322);
-            txtUserName.Margin = new Padding(4, 5, 4, 5);
+            txtUserName.Location = new Point(120, 193);
             txtUserName.Multiline = true;
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(224, 37);
+            txtUserName.Size = new Size(157, 22);
             txtUserName.TabIndex = 6;
             // 
             // txtPassword
@@ -148,31 +148,28 @@
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Cursor = Cursors.IBeam;
             txtPassword.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(174, 412);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Location = new Point(122, 247);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(224, 37);
+            txtPassword.Size = new Size(157, 22);
             txtPassword.TabIndex = 7;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 70, 160);
             panel2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            panel2.Location = new Point(102, 363);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(71, 218);
             panel2.Name = "panel2";
-            panel2.Size = new Size(354, 2);
+            panel2.Size = new Size(248, 1);
             panel2.TabIndex = 8;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 70, 160);
             panel3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            panel3.Location = new Point(102, 454);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Location = new Point(71, 272);
             panel3.Name = "panel3";
-            panel3.Size = new Size(354, 2);
+            panel3.Size = new Size(248, 1);
             panel3.TabIndex = 9;
             // 
             // btnLogin
@@ -182,9 +179,10 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(90, 532);
+            btnLogin.Location = new Point(63, 320);
+            btnLogin.Margin = new Padding(2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(354, 51);
+            btnLogin.Size = new Size(248, 31);
             btnLogin.TabIndex = 10;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -197,9 +195,10 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(431, 614);
+            button1.Location = new Point(301, 361);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(112, 34);
+            button1.Size = new Size(78, 34);
             button1.TabIndex = 11;
             button1.Text = "Registrar";
             button1.UseVisualStyleBackColor = false;
@@ -209,9 +208,10 @@
             // 
             pictureBox4.BackColor = Color.FromArgb(0, 70, 160);
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(489, 3);
+            pictureBox4.Location = new Point(342, 2);
+            pictureBox4.Margin = new Padding(2);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(50, 45);
+            pictureBox4.Size = new Size(35, 27);
             pictureBox4.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox4.TabIndex = 12;
             pictureBox4.TabStop = false;
@@ -219,10 +219,10 @@
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(542, 658);
+            ClientSize = new Size(379, 402);
             Controls.Add(pictureBox4);
             Controls.Add(button1);
             Controls.Add(btnLogin);
@@ -237,9 +237,11 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += FrmLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

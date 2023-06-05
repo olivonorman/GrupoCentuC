@@ -126,6 +126,7 @@
             ClientSize = new Size(653, 436);
             Controls.Add(dgvEmployeesWoman);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmEmployeesWoman";
             Text = "Reporte de Empleados que son mujeres";
             ((System.ComponentModel.ISupportInitialize)dgvEmployeesWoman).EndInit();

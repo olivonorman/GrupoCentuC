@@ -49,8 +49,14 @@
             btnCancel = new Button();
             cbxSexo = new ComboBox();
             chkLicencia = new CheckBox();
+            panel2 = new Panel();
+            panel5 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -62,14 +68,14 @@
             panel1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(647, 60);
+            panel1.Size = new Size(609, 60);
             panel1.TabIndex = 0;
             // 
             // picClose
             // 
             picClose.Dock = DockStyle.Right;
             picClose.Image = (Image)resources.GetObject("picClose.Image");
-            picClose.Location = new Point(597, 0);
+            picClose.Location = new Point(559, 0);
             picClose.Margin = new Padding(2);
             picClose.Name = "picClose";
             picClose.Size = new Size(50, 60);
@@ -81,12 +87,11 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.Dock = DockStyle.Left;
             lblTitulo.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Location = new Point(1, 16);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(264, 28);
+            lblTitulo.Size = new Size(178, 19);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Modulo de Empleado";
             // 
@@ -98,16 +103,16 @@
             lblId.Location = new Point(38, 86);
             lblId.Margin = new Padding(2, 0, 2, 0);
             lblId.Name = "lblId";
-            lblId.Size = new Size(40, 27);
+            lblId.Size = new Size(28, 20);
             lblId.TabIndex = 1;
             lblId.Text = "Id:";
             lblId.Visible = false;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(154, 149);
+            txtNombre.Location = new Point(213, 149);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(157, 26);
+            txtNombre.Size = new Size(98, 20);
             txtNombre.TabIndex = 1;
             // 
             // lblNombre
@@ -118,7 +123,7 @@
             lblNombre.Location = new Point(38, 149);
             lblNombre.Margin = new Padding(2, 0, 2, 0);
             lblNombre.Name = "lblNombre";
-            lblNombre.Size = new Size(110, 27);
+            lblNombre.Size = new Size(72, 20);
             lblNombre.TabIndex = 3;
             lblNombre.Text = "Nombre:";
             // 
@@ -127,18 +132,18 @@
             lblApellido.AutoSize = true;
             lblApellido.BackColor = Color.White;
             lblApellido.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblApellido.Location = new Point(340, 149);
+            lblApellido.Location = new Point(334, 149);
             lblApellido.Margin = new Padding(2, 0, 2, 0);
             lblApellido.Name = "lblApellido";
-            lblApellido.Size = new Size(115, 27);
+            lblApellido.Size = new Size(73, 20);
             lblApellido.TabIndex = 5;
             lblApellido.Text = "Apellido:";
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(461, 149);
+            txtApellido.Location = new Point(466, 149);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(157, 26);
+            txtApellido.Size = new Size(98, 20);
             txtApellido.TabIndex = 2;
             // 
             // lblEdad
@@ -149,15 +154,15 @@
             lblEdad.Location = new Point(38, 214);
             lblEdad.Margin = new Padding(2, 0, 2, 0);
             lblEdad.Name = "lblEdad";
-            lblEdad.Size = new Size(78, 27);
+            lblEdad.Size = new Size(51, 20);
             lblEdad.TabIndex = 7;
             lblEdad.Text = "Edad:";
             // 
             // txtEdad
             // 
-            txtEdad.Location = new Point(154, 215);
+            txtEdad.Location = new Point(213, 216);
             txtEdad.Name = "txtEdad";
-            txtEdad.Size = new Size(98, 26);
+            txtEdad.Size = new Size(98, 20);
             txtEdad.TabIndex = 3;
             txtEdad.KeyPress += txtEdad_KeyPress;
             // 
@@ -166,10 +171,10 @@
             lblSexo.AutoSize = true;
             lblSexo.BackColor = Color.White;
             lblSexo.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSexo.Location = new Point(340, 214);
+            lblSexo.Location = new Point(334, 214);
             lblSexo.Margin = new Padding(2, 0, 2, 0);
             lblSexo.Name = "lblSexo";
-            lblSexo.Size = new Size(70, 27);
+            lblSexo.Size = new Size(47, 20);
             lblSexo.TabIndex = 8;
             lblSexo.Text = "Sexo:";
             // 
@@ -178,10 +183,10 @@
             lblPoseeLicencia.AutoSize = true;
             lblPoseeLicencia.BackColor = Color.White;
             lblPoseeLicencia.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPoseeLicencia.Location = new Point(340, 281);
+            lblPoseeLicencia.Location = new Point(334, 281);
             lblPoseeLicencia.Margin = new Padding(2, 0, 2, 0);
             lblPoseeLicencia.Name = "lblPoseeLicencia";
-            lblPoseeLicencia.Size = new Size(190, 27);
+            lblPoseeLicencia.Size = new Size(124, 20);
             lblPoseeLicencia.TabIndex = 12;
             lblPoseeLicencia.Text = "Posee Licencia:";
             // 
@@ -193,16 +198,16 @@
             lblFechaNac.Location = new Point(38, 281);
             lblFechaNac.Margin = new Padding(2, 0, 2, 0);
             lblFechaNac.Name = "lblFechaNac";
-            lblFechaNac.Size = new Size(229, 27);
+            lblFechaNac.Size = new Size(147, 20);
             lblFechaNac.TabIndex = 11;
             lblFechaNac.Text = "Fecha Nacimiento:";
             // 
             // dtFechaNac
             // 
             dtFechaNac.Format = DateTimePickerFormat.Short;
-            dtFechaNac.Location = new Point(38, 323);
+            dtFechaNac.Location = new Point(213, 285);
             dtFechaNac.Name = "dtFechaNac";
-            dtFechaNac.Size = new Size(202, 26);
+            dtFechaNac.Size = new Size(98, 20);
             dtFechaNac.TabIndex = 5;
             // 
             // lblSueldo
@@ -210,18 +215,18 @@
             lblSueldo.AutoSize = true;
             lblSueldo.BackColor = Color.White;
             lblSueldo.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSueldo.Location = new Point(38, 369);
+            lblSueldo.Location = new Point(38, 346);
             lblSueldo.Margin = new Padding(2, 0, 2, 0);
             lblSueldo.Name = "lblSueldo";
-            lblSueldo.Size = new Size(95, 27);
+            lblSueldo.Size = new Size(62, 20);
             lblSueldo.TabIndex = 15;
             lblSueldo.Text = "Sueldo:";
             // 
             // txtSueldo
             // 
-            txtSueldo.Location = new Point(154, 369);
+            txtSueldo.Location = new Point(213, 346);
             txtSueldo.Name = "txtSueldo";
-            txtSueldo.Size = new Size(98, 26);
+            txtSueldo.Size = new Size(98, 20);
             txtSueldo.TabIndex = 7;
             txtSueldo.KeyPress += txtSueldo_KeyPress;
             // 
@@ -233,12 +238,15 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(354, 471);
+            btnSave.Image = (Image)resources.GetObject("btnSave.Image");
+            btnSave.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSave.Location = new Point(317, 416);
             btnSave.Margin = new Padding(2);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(128, 38);
             btnSave.TabIndex = 8;
             btnSave.Text = "Guardar";
+            btnSave.TextAlign = ContentAlignment.MiddleRight;
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
@@ -250,12 +258,15 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.Black;
-            btnCancel.Location = new Point(508, 471);
+            btnCancel.Image = (Image)resources.GetObject("btnCancel.Image");
+            btnCancel.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancel.Location = new Point(471, 416);
             btnCancel.Margin = new Padding(2);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(128, 38);
             btnCancel.TabIndex = 9;
             btnCancel.Text = "Cancelar";
+            btnCancel.TextAlign = ContentAlignment.MiddleRight;
             btnCancel.UseVisualStyleBackColor = false;
             btnCancel.Click += btnCancel_Click;
             // 
@@ -263,27 +274,72 @@
             // 
             cbxSexo.FormattingEnabled = true;
             cbxSexo.Items.AddRange(new object[] { "M", "F" });
-            cbxSexo.Location = new Point(461, 214);
+            cbxSexo.Location = new Point(466, 213);
             cbxSexo.Name = "cbxSexo";
-            cbxSexo.Size = new Size(98, 28);
+            cbxSexo.Size = new Size(98, 21);
             cbxSexo.TabIndex = 4;
             // 
             // chkLicencia
             // 
             chkLicencia.AutoSize = true;
             chkLicencia.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            chkLicencia.Location = new Point(551, 285);
+            chkLicencia.Location = new Point(466, 285);
             chkLicencia.Name = "chkLicencia";
-            chkLicencia.Size = new Size(22, 21);
+            chkLicencia.Size = new Size(15, 14);
             chkLicencia.TabIndex = 6;
             chkLicencia.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(0, 70, 160);
+            panel2.Controls.Add(panel5);
+            panel2.Location = new Point(29, 132);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(555, 1);
+            panel2.TabIndex = 16;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(0, 70, 160);
+            panel5.Location = new Point(548, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(5, 253);
+            panel5.TabIndex = 18;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 70, 160);
+            panel3.Location = new Point(29, 384);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(555, 1);
+            panel3.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(0, 70, 160);
+            panel4.Location = new Point(29, 132);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1, 253);
+            panel4.TabIndex = 17;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(0, 70, 160);
+            panel6.Location = new Point(583, 132);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(1, 253);
+            panel6.TabIndex = 18;
+            // 
             // FrmCreateEmployee
             // 
-            AutoScaleDimensions = new SizeF(10F, 20F);
+            AutoScaleDimensions = new SizeF(6F, 13F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(647, 520);
+            ClientSize = new Size(609, 465);
+            Controls.Add(panel6);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(chkLicencia);
             Controls.Add(cbxSexo);
             Controls.Add(btnCancel);
@@ -307,9 +363,11 @@
             Name = "FrmCreateEmployee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmCreateEmployee";
+            Load += FrmCreateEmployee_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -336,5 +394,10 @@
         public TextBox txtSueldo;
         public ComboBox cbxSexo;
         public CheckBox chkLicencia;
+        private Panel panel2;
+        private Panel panel5;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel6;
     }
 }
