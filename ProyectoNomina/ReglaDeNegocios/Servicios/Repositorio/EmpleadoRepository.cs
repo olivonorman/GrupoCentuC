@@ -119,16 +119,16 @@ namespace ReglaDeNegocios.Servicios.Repositorio
             }else if(sueldoBruto > 34685.00m && sueldoBruto <= 52027.42m)
             {
                 
-                decimal montoEscala = 52027.42m;
-                decimal excedente = montoEscala - salarioNeto;
+                decimal montoEscala = 34685.00m;
+                decimal excedente =  salarioNeto - montoEscala;
                 decimal tasaISR = excedente * 0.15m;
                 
                 return tasaISR;
             }else if(sueldoBruto > 52027.42m && sueldoBruto <= 72260.25m)
             {
                 
-                decimal montoEscala = 72260.25m;
-                decimal excedente = montoEscala - salarioNeto;
+                decimal montoEscala = 52027.42m;
+                decimal excedente = salarioNeto - montoEscala;
                 decimal tasaISR = excedente * 0.20m;
                 decimal impuestoAdicional = tasaISR + 2601.36m;
                 return impuestoAdicional;

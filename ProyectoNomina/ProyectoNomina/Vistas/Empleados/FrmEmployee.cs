@@ -35,11 +35,10 @@ namespace ProyectoNomina.Vistas.Empleados
             foreach (DataRow row in dataTable.Rows)
             {
                 i++;
-                string sexo = row["Sexo"].ToString();
-                string sexoTexto = (sexo == "M") ? "Masculino" : (sexo == "F") ? "Femenino" : "";
-                string poseeLicencia = row["PoseeLicencia"].ToString() == "True" ? "Si" : "No";
+                var sexo = Convert.ToChar(row["Sexo"]);
+                var poseeLicencia = bool.Parse(row["PoseeLicencia"].ToString());
                 dgvEmployees.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString(),
-                    sexoTexto, Convert.ToDateTime(row["FechaNacimiento"]).Date.ToString("dd/MM/yyyy"), poseeLicencia, row["SueldoBruto"].ToString());
+                    sexo, Convert.ToDateTime(row["FechaNacimiento"]).Date.ToString("dd/MM/yyyy"),poseeLicencia , row["SueldoBruto"].ToString());
             }
         }
 
@@ -64,7 +63,8 @@ namespace ProyectoNomina.Vistas.Empleados
                     frmCreate.txtEdad.Text = dgvEmployees["Edad", e.RowIndex].Value.ToString();
                     frmCreate.cbxSexo.Text = dgvEmployees["Sexo", e.RowIndex].Value.ToString();
                     frmCreate.dtFechaNac.Text = dgvEmployees["FechaNacimiento", e.RowIndex].Value.ToString();
-                    frmCreate.chkLicencia.Text = dgvEmployees["PoseeLicencia", e.RowIndex].Value.ToString();
+                    var poseeLicencia = Convert.ToBoolean(dgvEmployees["PoseeLicencia",e.RowIndex].Value.ToString());
+                    frmCreate.chkLicencia.Checked = poseeLicencia;
                     frmCreate.txtSueldo.Text = dgvEmployees["SueldoBruto", e.RowIndex].Value.ToString();
                     frmCreate.isEditing = true;
                     frmCreate.ShowDialog();
@@ -95,6 +95,26 @@ namespace ProyectoNomina.Vistas.Empleados
                 {
                     CultureInfo cultureInfo = new CultureInfo("es-DO");
                     e.Value = sueldoBruto.ToString("C", cultureInfo);
+                    e.FormattingApplied = true;
+                }
+            }
+
+            if (dgvEmployees.Columns[e.ColumnIndex].Name == "PoseeLicencia")
+            {
+                if (e.Value != null)
+                {
+                    var poseeLicencia = (bool)e.Value;
+                    e.Value = poseeLicencia ? "Si" : "No";
+                    e.FormattingApplied = true;
+                }
+            }
+
+            if (dgvEmployees.Columns[e.ColumnIndex].Name == "Sexo")
+            {
+                if (e.Value != null)
+                {
+                    var sexo = (char)e.Value;
+                    e.Value = sexo == 'M' ? "Masculino" : "Femenino";
                     e.FormattingApplied = true;
                 }
             }
