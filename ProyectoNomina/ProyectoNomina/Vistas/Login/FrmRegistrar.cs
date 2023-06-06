@@ -15,15 +15,18 @@ namespace ProyectoNomina.Vistas.Login
 {
     public partial class FrmRegistrar : Form
     {
+        #region Atributo
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmRegistrar(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             txtPassword.PasswordChar = '*';
         }
-
+        #endregion
+        #region Botones del formulario
         private void picClose_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -114,5 +117,6 @@ namespace ProyectoNomina.Vistas.Login
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
         }
+        #endregion
     }
 }

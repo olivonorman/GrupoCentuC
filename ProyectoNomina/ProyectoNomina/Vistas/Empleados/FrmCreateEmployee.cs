@@ -17,21 +17,20 @@ namespace ProyectoNomina.Vistas.Empleados
 {
     public partial class FrmCreateEmployee : Form
     {
-
+        #region Atributos y variables
         FrmEmployee employee;
         private readonly IEmpleadoRepository empleadoRepository;
         public bool isEditing = false;
+        #endregion
+        #region Constructor
         public FrmCreateEmployee(FrmEmployee frmEmployee, IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             employee = frmEmployee;
             this.empleadoRepository = empleadoRepository;
         }
-
-
-
-
-
+        #endregion
+        #region Codigo de los botones del formulario
         private void picClose_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -173,5 +172,6 @@ namespace ProyectoNomina.Vistas.Empleados
                 this.Show();
             }
         }
+        #endregion
     }
 }

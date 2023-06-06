@@ -14,15 +14,18 @@ namespace ProyectoNomina.Vistas.Empleados
 {
     public partial class FrmCalcularNomina : Form
     {
+        #region Atributos
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmCalcularNomina(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             LoadCalcularNomina();
         }
-
+        #endregion
+        #region Metodos para mostrar el DataGridView
         private void LoadCalcularNomina()
         {
             int i = 0;
@@ -70,5 +73,7 @@ namespace ProyectoNomina.Vistas.Empleados
                 }
             }
         }
+
+        #endregion
     }
 }

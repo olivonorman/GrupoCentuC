@@ -11,9 +11,11 @@ namespace ProyectoNomina
 {
     public partial class MainForm : Form
     {
+        #region Atributos y variables globales
         private Form activeForm = null;
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public MainForm(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace ProyectoNomina
             this.empleadoRepository = empleadoRepository;
 
         }
-
+        #endregion
 
         #region Metodos privados para el menu
         private void customizeDesign()
@@ -132,11 +134,12 @@ namespace ProyectoNomina
                 this.Show();
             }
         }
-        #endregion
-
         private void pbxLogo_Click(object sender, EventArgs e)
         {
-           
+
         }
+        #endregion
+
+
     }
 }

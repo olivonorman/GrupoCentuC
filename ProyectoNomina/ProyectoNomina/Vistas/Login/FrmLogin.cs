@@ -14,15 +14,18 @@ namespace ProyectoNomina.Vistas.Login
 {
     public partial class FrmLogin : Form
     {
+        #region Atributo
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmLogin(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             txtPassword.PasswordChar = '*';
         }
-
+        #endregion
+        #region Metodos privados
         private void MsgError(string mensaje)
         {
             lblErrorMessage.Text = " " + mensaje;
@@ -37,6 +40,8 @@ namespace ProyectoNomina.Vistas.Login
             this.Show();
             txtUserName.Focus();
         }
+        #endregion
+        #region Botones del formulario
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtUserName.Text))
@@ -122,5 +127,6 @@ namespace ProyectoNomina.Vistas.Login
         {
 
         }
+        #endregion
     }
 }

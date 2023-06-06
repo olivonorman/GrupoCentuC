@@ -14,15 +14,18 @@ namespace ProyectoNomina.Vistas
 {
     public partial class FrmEmployees50K : Form
     {
+        #region Atributo
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmEmployees50K(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             LoadEmployee50K();
         }
-
+        #endregion
+        #region Metodo del datagridview
         public void LoadEmployee50K()
         {
             int i = 0;
@@ -51,5 +54,6 @@ namespace ProyectoNomina.Vistas
                 }
             }
         }
+        #endregion
     }
 }

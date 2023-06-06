@@ -14,16 +14,18 @@ namespace ProyectoNomina.Vistas.Reportes
 {
     public partial class FrmEmployeesWoman : Form
     {
+        #region Atributo 
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmEmployeesWoman(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             LoadEmployeesWoman();
         }
-
-
+        #endregion
+        #region Metodo para cargar el datagridview
         public void LoadEmployeesWoman()
         {
             int i = 0;
@@ -36,5 +38,6 @@ namespace ProyectoNomina.Vistas.Reportes
                 dgvEmployeesWoman.Rows.Add(row["Id"], row["Nombre"].ToString(), row["Apellido"].ToString(), row["Edad"].ToString());
             }
         }
+        #endregion
     }
 }

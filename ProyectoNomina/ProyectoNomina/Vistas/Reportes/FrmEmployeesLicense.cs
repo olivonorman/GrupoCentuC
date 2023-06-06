@@ -14,15 +14,18 @@ namespace ProyectoNomina.Vistas.Reportes
 {
     public partial class FrmEmployeesLicense : Form
     {
+        #region Atributo
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmEmployeesLicense(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             LoadEmployeeLicense();
         }
-
+        #endregion
+        #region Metodo para cargar el datagridview
         public void LoadEmployeeLicense()
         {
             int i = 0;
@@ -38,5 +41,6 @@ namespace ProyectoNomina.Vistas.Reportes
                     sexoTexto, Convert.ToDateTime(row["FechaNacimiento"]).Date.ToString("dd/MM/yyyy"));
             }
         }
+        #endregion
     }
 }

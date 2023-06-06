@@ -16,15 +16,18 @@ namespace ProyectoNomina.Vistas.Empleados
 {
     public partial class FrmEmployee : Form
     {
+        #region atributo
         private readonly IEmpleadoRepository empleadoRepository;
-
+        #endregion
+        #region Constructor
         public FrmEmployee(IEmpleadoRepository empleadoRepository)
         {
             InitializeComponent();
             this.empleadoRepository = empleadoRepository;
             LoadEmployees();
         }
-
+        #endregion
+        #region Metodos y botones
         public void LoadEmployees()
         {
 
@@ -119,5 +122,6 @@ namespace ProyectoNomina.Vistas.Empleados
                 }
             }
         }
+        #endregion
     }
 }
