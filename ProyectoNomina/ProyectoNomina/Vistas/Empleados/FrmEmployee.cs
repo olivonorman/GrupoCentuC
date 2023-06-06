@@ -45,9 +45,9 @@ namespace ProyectoNomina.Vistas.Empleados
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             FrmCreateEmployee frmCreate = new FrmCreateEmployee(this, empleadoRepository);
             frmCreate.ShowDialog();
+
         }
 
         private void dgvEmployees_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,7 +94,7 @@ namespace ProyectoNomina.Vistas.Empleados
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal sueldoBruto))
                 {
                     CultureInfo cultureInfo = new CultureInfo("es-DO");
-                    e.Value = sueldoBruto.ToString("C",cultureInfo);
+                    e.Value = sueldoBruto.ToString("C", cultureInfo);
                     e.FormattingApplied = true;
                 }
             }

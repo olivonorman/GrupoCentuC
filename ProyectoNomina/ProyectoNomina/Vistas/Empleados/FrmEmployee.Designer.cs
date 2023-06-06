@@ -57,7 +57,7 @@
             dgvEmployees.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 70, 160);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Calibri", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -68,7 +68,7 @@
             dgvEmployees.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, PoseeLicencia, SueldoBruto, Edit, Delete });
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -78,11 +78,10 @@
             dgvEmployees.EnableHeadersVisualStyles = false;
             dgvEmployees.GridColor = SystemColors.ControlDark;
             dgvEmployees.Location = new Point(0, 0);
-            dgvEmployees.Margin = new Padding(2);
             dgvEmployees.Name = "dgvEmployees";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.Font = new Font("Calibri", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
@@ -92,7 +91,7 @@
             dgvEmployees.RowHeadersWidth = 62;
             dgvEmployees.RowTemplate.Height = 25;
             dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEmployees.Size = new Size(844, 436);
+            dgvEmployees.Size = new Size(1206, 727);
             dgvEmployees.TabIndex = 0;
             dgvEmployees.CellContentClick += dgvEmployees_CellContentClick;
             dgvEmployees.CellFormatting += dgvEmployees_CellFormatting;
@@ -103,7 +102,7 @@
             Id.HeaderText = "Id";
             Id.MinimumWidth = 8;
             Id.Name = "Id";
-            Id.Width = 47;
+            Id.Width = 64;
             // 
             // Nombre
             // 
@@ -111,6 +110,7 @@
             Nombre.HeaderText = "Nombre";
             Nombre.MinimumWidth = 8;
             Nombre.Name = "Nombre";
+            Nombre.Width = 150;
             // 
             // Apellido
             // 
@@ -118,6 +118,7 @@
             Apellido.HeaderText = "Apellido";
             Apellido.MinimumWidth = 8;
             Apellido.Name = "Apellido";
+            Apellido.Width = 150;
             // 
             // Edad
             // 
@@ -125,6 +126,7 @@
             Edad.HeaderText = "Edad";
             Edad.MinimumWidth = 8;
             Edad.Name = "Edad";
+            Edad.Width = 150;
             // 
             // Sexo
             // 
@@ -132,6 +134,7 @@
             Sexo.HeaderText = "Sexo";
             Sexo.MinimumWidth = 8;
             Sexo.Name = "Sexo";
+            Sexo.Width = 150;
             // 
             // FechaNacimiento
             // 
@@ -159,6 +162,7 @@
             SueldoBruto.HeaderText = "SueldoBruto";
             SueldoBruto.MinimumWidth = 8;
             SueldoBruto.Name = "SueldoBruto";
+            SueldoBruto.Width = 150;
             // 
             // Edit
             // 
@@ -183,34 +187,40 @@
             panelEmployees1.BackColor = Color.FromArgb(0, 70, 160);
             panelEmployees1.Controls.Add(btnAgregar);
             panelEmployees1.Dock = DockStyle.Bottom;
-            panelEmployees1.Location = new Point(0, 354);
+            panelEmployees1.Location = new Point(0, 590);
+            panelEmployees1.Margin = new Padding(4, 5, 4, 5);
             panelEmployees1.Name = "panelEmployees1";
-            panelEmployees1.Size = new Size(844, 82);
+            panelEmployees1.Size = new Size(1206, 137);
             panelEmployees1.TabIndex = 4;
             // 
             // btnAgregar
             // 
+            btnAgregar.BackColor = Color.DeepSkyBlue;
             btnAgregar.Dock = DockStyle.Right;
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAgregar.ForeColor = SystemColors.ButtonHighlight;
             btnAgregar.Image = (Image)resources.GetObject("btnAgregar.Image");
-            btnAgregar.Location = new Point(769, 0);
-            btnAgregar.Margin = new Padding(2);
+            btnAgregar.ImageAlign = ContentAlignment.BottomCenter;
+            btnAgregar.Location = new Point(1066, 0);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(75, 82);
+            btnAgregar.Size = new Size(140, 137);
             btnAgregar.TabIndex = 0;
-            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += button1_Click;
             // 
             // FrmEmployee
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(844, 436);
+            ClientSize = new Size(1206, 727);
             Controls.Add(panelEmployees1);
             Controls.Add(dgvEmployees);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FrmEmployee";
             Text = "Crear empleados";
             ((System.ComponentModel.ISupportInitialize)dgvEmployees).EndInit();

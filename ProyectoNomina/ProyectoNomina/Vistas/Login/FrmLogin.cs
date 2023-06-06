@@ -55,9 +55,9 @@ namespace ProyectoNomina.Vistas.Login
 
                     if (usuarioAutenticado != null)
                     {
-                       
+
                         MainForm mainForm = new MainForm(empleadoRepository);
-                        mainForm.lblName.Text = "Bienvenido " + usuarioAutenticado.Nombre;
+                        mainForm.lblName.Text = "Bienvenid@  " + usuarioAutenticado.Nombre;
                         mainForm.lblUserName.Text = usuarioAutenticado.UserName;
                         mainForm.lblId.Text = usuarioAutenticado.Id.ToString();
 
@@ -104,6 +104,21 @@ namespace ProyectoNomina.Vistas.Login
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

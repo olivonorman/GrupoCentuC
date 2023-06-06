@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProyectoNomina.Vistas.Empleados;
 using ProyectoNomina.Vistas.Login;
 using ReglaDeNegocios.Servicios.Interfaz;
 using ReglaDeNegocios.Servicios.Repositorio;

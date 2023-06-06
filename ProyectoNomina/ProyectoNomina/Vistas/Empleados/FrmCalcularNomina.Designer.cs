@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCalcularNomina));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCalcularNomina = new Button();
@@ -52,23 +53,29 @@
             panel1.Controls.Add(btnCalcularNomina);
             panel1.Dock = DockStyle.Bottom;
             panel1.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            panel1.Location = new Point(0, 367);
+            panel1.Location = new Point(0, 611);
+            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(800, 82);
+            panel1.Size = new Size(1143, 137);
             panel1.TabIndex = 0;
             // 
             // btnCalcularNomina
             // 
+            btnCalcularNomina.BackColor = Color.DeepSkyBlue;
             btnCalcularNomina.Dock = DockStyle.Right;
             btnCalcularNomina.FlatAppearance.BorderSize = 0;
             btnCalcularNomina.FlatStyle = FlatStyle.Flat;
+            btnCalcularNomina.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCalcularNomina.ForeColor = SystemColors.ControlLightLight;
             btnCalcularNomina.Image = (Image)resources.GetObject("btnCalcularNomina.Image");
-            btnCalcularNomina.Location = new Point(701, 0);
-            btnCalcularNomina.Margin = new Padding(2);
+            btnCalcularNomina.Location = new Point(1002, 0);
             btnCalcularNomina.Name = "btnCalcularNomina";
-            btnCalcularNomina.Size = new Size(99, 82);
+            btnCalcularNomina.Size = new Size(141, 137);
             btnCalcularNomina.TabIndex = 0;
-            btnCalcularNomina.UseVisualStyleBackColor = true;
+            btnCalcularNomina.Text = "Calcular";
+            btnCalcularNomina.TextAlign = ContentAlignment.BottomCenter;
+            btnCalcularNomina.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnCalcularNomina.UseVisualStyleBackColor = false;
             btnCalcularNomina.Click += btnCalcularNomina_Click;
             // 
             // dgvCalculoNomina
@@ -78,7 +85,7 @@
             dgvCalculoNomina.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 70, 160);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Calibri", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -86,25 +93,33 @@
             dgvCalculoNomina.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCalculoNomina.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCalculoNomina.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, SueldoBruto, TSS, ISR, SueldoNeto });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvCalculoNomina.DefaultCellStyle = dataGridViewCellStyle3;
             dgvCalculoNomina.Dock = DockStyle.Fill;
             dgvCalculoNomina.EnableHeadersVisualStyles = false;
             dgvCalculoNomina.GridColor = SystemColors.ControlDark;
             dgvCalculoNomina.Location = new Point(0, 0);
-            dgvCalculoNomina.Margin = new Padding(2, 1, 2, 1);
+            dgvCalculoNomina.Margin = new Padding(3, 2, 3, 2);
             dgvCalculoNomina.Name = "dgvCalculoNomina";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvCalculoNomina.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Calibri", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvCalculoNomina.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvCalculoNomina.RowHeadersVisible = false;
             dgvCalculoNomina.RowHeadersWidth = 62;
             dgvCalculoNomina.RowTemplate.Height = 25;
             dgvCalculoNomina.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCalculoNomina.Size = new Size(800, 367);
+            dgvCalculoNomina.Size = new Size(1143, 611);
             dgvCalculoNomina.TabIndex = 1;
             dgvCalculoNomina.CellFormatting += dgvCalculoNomina_CellFormatting;
             // 
@@ -115,7 +130,7 @@
             Id.MinimumWidth = 8;
             Id.Name = "Id";
             Id.ReadOnly = true;
-            Id.Width = 47;
+            Id.Width = 64;
             // 
             // Nombre
             // 
@@ -164,12 +179,13 @@
             // 
             // FrmCalcularNomina
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 449);
+            ClientSize = new Size(1143, 748);
             Controls.Add(dgvCalculoNomina);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "FrmCalcularNomina";
             Text = "Calcular Nomina";
             panel1.ResumeLayout(false);

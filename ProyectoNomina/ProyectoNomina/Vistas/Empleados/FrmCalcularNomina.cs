@@ -63,10 +63,10 @@ namespace ProyectoNomina.Vistas.Empleados
             {
                 if (e.Value != null && decimal.TryParse(e.Value.ToString(), out decimal precio))
                 {
-                        CultureInfo culture = new CultureInfo("es-DO");
-                        e.Value = precio.ToString("C",culture);
-                        e.FormattingApplied = true;
-                 
+                    CultureInfo culture = new CultureInfo("es-DO");
+                    e.Value = precio.ToString("C", culture);
+                    e.FormattingApplied = true;
+
                 }
             }
         }

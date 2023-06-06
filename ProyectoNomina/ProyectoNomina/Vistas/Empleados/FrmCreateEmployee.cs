@@ -30,7 +30,44 @@ namespace ProyectoNomina.Vistas.Empleados
 
 
 
-        private void btnSave_Click(object sender, EventArgs e)
+
+
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                employee.Show();
+                this.Close();
+
+            }
+            else
+            {
+                this.Show();
+            }
+        }
+
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
+            {
+                e.Handled = true;
+            }
+        }
+
+
+
+
+        private void picGuardar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
             string apellido = txtApellido.Text;
@@ -44,7 +81,7 @@ namespace ProyectoNomina.Vistas.Empleados
             {
                 MessageBox.Show("Debe de llenar todos los campos", "Completar campos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else if (!int.TryParse(txtEdad.Text, out edad) || edad <= 18)
+            else if (!int.TryParse(txtEdad.Text, out edad) || edad < 17)
             {
                 MessageBox.Show("La edad debe ser mayor a 18", "Edad invalida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -122,7 +159,7 @@ namespace ProyectoNomina.Vistas.Empleados
             }
         }
 
-        private void picClose_Click(object sender, EventArgs e)
+        private void picCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -135,42 +172,6 @@ namespace ProyectoNomina.Vistas.Empleados
             {
                 this.Show();
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-
-                employee.Show();
-                this.Close();
-
-            }
-            else
-            {
-                this.Show();
-            }
-        }
-
-        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void txtSueldo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
-            {
-                e.Handled = true;
-            }
-        }
-
-        private void FrmCreateEmployee_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

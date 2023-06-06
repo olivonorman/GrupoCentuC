@@ -50,7 +50,7 @@
             dgvReport50K.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 70, 160);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Calibri", 11F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -61,7 +61,7 @@
             dgvReport50K.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento, SueldoBruto });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -70,6 +70,7 @@
             dgvReport50K.Dock = DockStyle.Fill;
             dgvReport50K.EnableHeadersVisualStyles = false;
             dgvReport50K.Location = new Point(0, 0);
+            dgvReport50K.Margin = new Padding(4);
             dgvReport50K.Name = "dgvReport50K";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -80,14 +81,16 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvReport50K.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvReport50K.RowHeadersVisible = false;
+            dgvReport50K.RowHeadersWidth = 62;
             dgvReport50K.RowTemplate.Height = 25;
-            dgvReport50K.Size = new Size(653, 436);
+            dgvReport50K.Size = new Size(840, 640);
             dgvReport50K.TabIndex = 0;
             dgvReport50K.CellFormatting += dgvReport50K_CellFormatting;
             // 
             // Id
             // 
             Id.HeaderText = "Id";
+            Id.MinimumWidth = 8;
             Id.Name = "Id";
             Id.ReadOnly = true;
             Id.Width = 50;
@@ -95,22 +98,28 @@
             // Nombre
             // 
             Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 8;
             Nombre.Name = "Nombre";
+            Nombre.Width = 150;
             // 
             // Apellido
             // 
             Apellido.HeaderText = "Apellido";
+            Apellido.MinimumWidth = 8;
             Apellido.Name = "Apellido";
+            Apellido.Width = 150;
             // 
             // Edad
             // 
             Edad.HeaderText = "Edad";
+            Edad.MinimumWidth = 8;
             Edad.Name = "Edad";
             Edad.Width = 50;
             // 
             // Sexo
             // 
             Sexo.HeaderText = "Sexo";
+            Sexo.MinimumWidth = 8;
             Sexo.Name = "Sexo";
             Sexo.Width = 50;
             // 
@@ -118,33 +127,38 @@
             // 
             FechaNacimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             FechaNacimiento.HeaderText = "FechaNacimiento";
+            FechaNacimiento.MinimumWidth = 8;
             FechaNacimiento.Name = "FechaNacimiento";
             // 
             // SueldoBruto
             // 
             SueldoBruto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             SueldoBruto.HeaderText = "SueldoBruto";
+            SueldoBruto.MinimumWidth = 8;
             SueldoBruto.Name = "SueldoBruto";
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 70, 160);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 355);
+            panel1.Location = new Point(0, 521);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(653, 81);
+            panel1.Size = new Size(840, 119);
             panel1.TabIndex = 1;
             // 
             // FrmEmployees50K
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(653, 436);
+            ClientSize = new Size(840, 640);
             Controls.Add(panel1);
             Controls.Add(dgvReport50K);
+            Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "FrmEmployees50K";
-            Text = "Reporte de Salario mayor a $50,000";
+            Text = "Salario mayor a $50,000";
             ((System.ComponentModel.ISupportInitialize)dgvReport50K).EndInit();
             ResumeLayout(false);
         }

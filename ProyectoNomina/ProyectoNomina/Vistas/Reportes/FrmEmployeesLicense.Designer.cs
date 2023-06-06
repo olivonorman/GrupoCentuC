@@ -44,9 +44,10 @@
             // 
             panel1.BackColor = Color.FromArgb(0, 70, 160);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new Point(0, 355);
+            panel1.Location = new Point(0, 521);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(653, 81);
+            panel1.Size = new Size(840, 119);
             panel1.TabIndex = 0;
             // 
             // DgvEmployeesLicense
@@ -56,23 +57,24 @@
             DgvEmployeesLicense.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 70, 160);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             DgvEmployeesLicense.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DgvEmployeesLicense.ColumnHeadersHeight = 34;
             DgvEmployeesLicense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             DgvEmployeesLicense.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, Edad, Sexo, FechaNacimiento });
             DgvEmployeesLicense.Dock = DockStyle.Fill;
             DgvEmployeesLicense.EnableHeadersVisualStyles = false;
             DgvEmployeesLicense.GridColor = SystemColors.ControlDark;
             DgvEmployeesLicense.Location = new Point(0, 0);
-            DgvEmployeesLicense.Margin = new Padding(2);
             DgvEmployeesLicense.Name = "DgvEmployeesLicense";
             DgvEmployeesLicense.RowHeadersVisible = false;
+            DgvEmployeesLicense.RowHeadersWidth = 62;
             DgvEmployeesLicense.RowTemplate.Height = 25;
-            DgvEmployeesLicense.Size = new Size(653, 355);
+            DgvEmployeesLicense.Size = new Size(840, 521);
             DgvEmployeesLicense.TabIndex = 1;
             // 
             // Id
@@ -81,7 +83,7 @@
             Id.HeaderText = "Id";
             Id.MinimumWidth = 10;
             Id.Name = "Id";
-            Id.Width = 47;
+            Id.Width = 59;
             // 
             // Nombre
             // 
@@ -123,14 +125,16 @@
             // 
             // FrmEmployeesLicense
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(653, 436);
+            ClientSize = new Size(840, 640);
             Controls.Add(DgvEmployeesLicense);
             Controls.Add(panel1);
+            Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4);
             Name = "FrmEmployeesLicense";
-            Text = "Reporte de empleados que poseen licencia";
+            Text = "Emplead@s con licencia";
             ((System.ComponentModel.ISupportInitialize)DgvEmployeesLicense).EndInit();
             ResumeLayout(false);
         }

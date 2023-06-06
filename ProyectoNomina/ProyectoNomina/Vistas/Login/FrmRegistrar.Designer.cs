@@ -39,14 +39,26 @@
             txtName = new TextBox();
             txtUserName = new TextBox();
             txtPassword = new TextBox();
-            btnGuardar = new Button();
-            btnCancelar = new Button();
-            panel3 = new Panel();
+            picGuardar = new PictureBox();
+            picCancelar = new PictureBox();
             panel2 = new Panel();
+            panel3 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            label5 = new Label();
+            label6 = new Label();
+            label7 = new Label();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picGuardar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picCancelar).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -57,16 +69,16 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(494, 63);
+            panel1.Size = new Size(556, 63);
             panel1.TabIndex = 0;
             // 
             // picClose
             // 
-            picClose.Dock = DockStyle.Right;
+            picClose.BackColor = Color.DeepSkyBlue;
             picClose.Image = (Image)resources.GetObject("picClose.Image");
-            picClose.Location = new Point(444, 0);
+            picClose.Location = new Point(510, 7);
             picClose.Name = "picClose";
-            picClose.Size = new Size(50, 63);
+            picClose.Size = new Size(39, 37);
             picClose.SizeMode = PictureBoxSizeMode.CenterImage;
             picClose.TabIndex = 1;
             picClose.TabStop = false;
@@ -75,11 +87,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            label1.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(0, 16);
+            label1.Location = new Point(12, 15);
             label1.Name = "label1";
-            label1.Size = new Size(74, 19);
+            label1.Size = new Size(103, 29);
             label1.TabIndex = 0;
             label1.Text = "Registrar";
             // 
@@ -87,9 +99,9 @@
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblId.Location = new Point(84, 91);
+            lblId.Location = new Point(95, 635);
             lblId.Name = "lblId";
-            lblId.Size = new Size(28, 20);
+            lblId.Size = new Size(39, 25);
             lblId.TabIndex = 1;
             lblId.Text = "Id:";
             lblId.Visible = false;
@@ -97,137 +109,222 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(84, 162);
+            label2.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.DeepSkyBlue;
+            label2.Location = new Point(95, 287);
             label2.Name = "label2";
-            label2.Size = new Size(72, 20);
+            label2.Size = new Size(96, 29);
             label2.TabIndex = 2;
-            label2.Text = "Nombre:";
+            label2.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(84, 219);
+            label3.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.DeepSkyBlue;
+            label3.Location = new Point(95, 400);
             label3.Name = "label3";
-            label3.Size = new Size(67, 20);
+            label3.Size = new Size(92, 29);
             label3.TabIndex = 3;
-            label3.Text = "Usuario:";
+            label3.Text = "Usuario";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(84, 276);
+            label4.Font = new Font("Calibri", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.DeepSkyBlue;
+            label4.Location = new Point(98, 510);
             label4.Name = "label4";
-            label4.Size = new Size(58, 20);
+            label4.Size = new Size(67, 29);
             label4.TabIndex = 4;
-            label4.Text = "Clave:";
+            label4.Text = "Clave";
             // 
             // txtName
             // 
+            txtName.BorderStyle = BorderStyle.None;
             txtName.Cursor = Cursors.IBeam;
-            txtName.Location = new Point(223, 164);
+            txtName.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtName.ForeColor = SystemColors.WindowFrame;
+            txtName.Location = new Point(104, 318);
             txtName.Name = "txtName";
-            txtName.Size = new Size(181, 20);
+            txtName.Size = new Size(354, 22);
             txtName.TabIndex = 5;
+            txtName.TextChanged += txtName_TextChanged;
             // 
             // txtUserName
             // 
+            txtUserName.BorderStyle = BorderStyle.None;
             txtUserName.Cursor = Cursors.IBeam;
-            txtUserName.Location = new Point(223, 221);
+            txtUserName.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtUserName.ForeColor = SystemColors.WindowFrame;
+            txtUserName.Location = new Point(101, 432);
             txtUserName.Name = "txtUserName";
-            txtUserName.Size = new Size(181, 20);
+            txtUserName.Size = new Size(357, 22);
             txtUserName.TabIndex = 6;
             // 
             // txtPassword
             // 
+            txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.Cursor = Cursors.IBeam;
-            txtPassword.Location = new Point(223, 275);
+            txtPassword.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtPassword.ForeColor = SystemColors.WindowFrame;
+            txtPassword.Location = new Point(101, 541);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(181, 20);
+            txtPassword.Size = new Size(354, 22);
             txtPassword.TabIndex = 7;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
-            // btnGuardar
+            // picGuardar
             // 
-            btnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnGuardar.BackColor = Color.FromArgb(0, 70, 160);
-            btnGuardar.FlatStyle = FlatStyle.Flat;
-            btnGuardar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnGuardar.ForeColor = Color.White;
-            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
-            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(221, 369);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(125, 34);
-            btnGuardar.TabIndex = 8;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
-            btnGuardar.UseVisualStyleBackColor = false;
-            btnGuardar.Click += btnGuardar_Click;
+            picGuardar.BackColor = Color.White;
+            picGuardar.Image = (Image)resources.GetObject("picGuardar.Image");
+            picGuardar.Location = new Point(334, 602);
+            picGuardar.Margin = new Padding(4, 5, 4, 5);
+            picGuardar.Name = "picGuardar";
+            picGuardar.Size = new Size(56, 39);
+            picGuardar.SizeMode = PictureBoxSizeMode.Zoom;
+            picGuardar.TabIndex = 22;
+            picGuardar.TabStop = false;
+            picGuardar.Click += picGuardar_Click;
             // 
-            // btnCancelar
+            // picCancelar
             // 
-            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            btnCancelar.BackColor = Color.Gainsboro;
-            btnCancelar.FlatStyle = FlatStyle.Flat;
-            btnCancelar.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancelar.ForeColor = Color.Black;
-            btnCancelar.Image = (Image)resources.GetObject("btnCancelar.Image");
-            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(357, 369);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(125, 34);
-            btnCancelar.TabIndex = 9;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
-            btnCancelar.UseVisualStyleBackColor = false;
-            btnCancelar.Click += btnCancelar_Click;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(0, 70, 160);
-            panel3.Location = new Point(27, 136);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(436, 1);
-            panel3.TabIndex = 18;
+            picCancelar.BackColor = Color.White;
+            picCancelar.Image = (Image)resources.GetObject("picCancelar.Image");
+            picCancelar.Location = new Point(398, 602);
+            picCancelar.Margin = new Padding(4, 5, 4, 5);
+            picCancelar.Name = "picCancelar";
+            picCancelar.Size = new Size(52, 39);
+            picCancelar.SizeMode = PictureBoxSizeMode.Zoom;
+            picCancelar.TabIndex = 23;
+            picCancelar.TabStop = false;
+            picCancelar.Click += picCancelar_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 70, 160);
-            panel2.Location = new Point(28, 327);
+            panel2.Controls.Add(panel3);
+            panel2.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel2.Location = new Point(98, 346);
+            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(436, 1);
-            panel2.TabIndex = 19;
+            panel2.Size = new Size(354, 2);
+            panel2.TabIndex = 24;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(0, 70, 160);
+            panel3.Controls.Add(panel4);
+            panel3.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel3.Location = new Point(0, 0);
+            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(354, 2);
+            panel3.TabIndex = 25;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(0, 70, 160);
-            panel4.Location = new Point(27, 136);
+            panel4.Controls.Add(panel5);
+            panel4.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel4.Location = new Point(0, 0);
+            panel4.Margin = new Padding(4, 5, 4, 5);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1, 192);
-            panel4.TabIndex = 20;
+            panel4.Size = new Size(354, 2);
+            panel4.TabIndex = 25;
             // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(0, 70, 160);
-            panel5.Location = new Point(462, 136);
+            panel5.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel5.Location = new Point(0, 0);
+            panel5.Margin = new Padding(4, 5, 4, 5);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1, 192);
-            panel5.TabIndex = 21;
+            panel5.Size = new Size(354, 2);
+            panel5.TabIndex = 26;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(0, 70, 160);
+            panel6.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel6.Location = new Point(98, 459);
+            panel6.Margin = new Padding(4, 5, 4, 5);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(354, 2);
+            panel6.TabIndex = 26;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(0, 70, 160);
+            panel7.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            panel7.Location = new Point(98, 569);
+            panel7.Margin = new Padding(4, 5, 4, 5);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(354, 2);
+            panel7.TabIndex = 27;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.ForeColor = Color.DeepSkyBlue;
+            label5.Location = new Point(328, 641);
+            label5.Name = "label5";
+            label5.Size = new Size(65, 19);
+            label5.TabIndex = 28;
+            label5.Text = "Guardar";
+            label5.Click += label5_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Calibri", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.DeepSkyBlue;
+            label6.Location = new Point(391, 641);
+            label6.Name = "label6";
+            label6.Size = new Size(67, 19);
+            label6.TabIndex = 29;
+            label6.Text = "Cancelar";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.DodgerBlue;
+            label7.Location = new Point(85, 198);
+            label7.Name = "label7";
+            label7.Size = new Size(390, 49);
+            label7.TabIndex = 30;
+            label7.Text = " ¡Crea tu usuario aqui!";
+            label7.Click += label7_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.White;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(208, 93);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(157, 100);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 31;
+            pictureBox1.TabStop = false;
             // 
             // FrmRegistrar
             // 
-            AutoScaleDimensions = new SizeF(6F, 13F);
+            AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(494, 425);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
+            ClientSize = new Size(556, 709);
+            Controls.Add(pictureBox1);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(panel7);
+            Controls.Add(panel6);
             Controls.Add(panel2);
-            Controls.Add(panel3);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnGuardar);
+            Controls.Add(picCancelar);
+            Controls.Add(picGuardar);
             Controls.Add(txtPassword);
             Controls.Add(txtUserName);
             Controls.Add(txtName);
@@ -242,9 +339,16 @@
             Name = "FrmRegistrar";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Registrar";
+            Load += FrmRegistrar_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picGuardar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picCancelar).EndInit();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,11 +365,17 @@
         private PictureBox picClose;
         public TextBox txtUserName;
         public TextBox txtPassword;
-        private Button btnGuardar;
-        private Button btnCancelar;
-        private Panel panel3;
+        private PictureBox picGuardar;
+        private PictureBox picCancelar;
         private Panel panel2;
+        private Panel panel3;
         private Panel panel4;
         private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private PictureBox pictureBox1;
     }
 }

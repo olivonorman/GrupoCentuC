@@ -24,7 +24,23 @@ namespace ProyectoNomina.Vistas.Login
             txtPassword.PasswordChar = '*';
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void picClose_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmLogin login = new FrmLogin(empleadoRepository);
+                login.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                FrmRegistrar frmRegistrar = new FrmRegistrar(empleadoRepository);
+                frmRegistrar.Show();
+            }
+        }
+
+        private void picGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -60,7 +76,7 @@ namespace ProyectoNomina.Vistas.Login
             }
         }
 
-        private void picClose_Click(object sender, EventArgs e)
+        private void picCancelar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -76,21 +92,27 @@ namespace ProyectoNomina.Vistas.Login
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void label5_Click(object sender, EventArgs e)
         {
 
-            if (MessageBox.Show("Seguro que deseas cancelar? ", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                FrmLogin login = new FrmLogin(empleadoRepository);
-                login.Show();
-                this.Hide();
+        }
 
-            }
-            else
-            {
-                FrmRegistrar frmRegistrar = new FrmRegistrar(empleadoRepository);
-                frmRegistrar.Show();
-            }
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmRegistrar_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -281,15 +281,22 @@ namespace ReglaDeNegocios.Servicios.Repositorio
                 comando.Parameters.AddWithValue("@Clave", userLogin.Clave);
 
                 SqlDataReader reader = comando.ExecuteReader();
-                if (reader.HasRows && reader.Read())
+                if (reader.HasRows)
                 {
-                        Usuario usuario = new Usuario
+                    while (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0) && !reader.IsDBNull(1) && !reader.IsDBNull(2))
                         {
-                            Id = reader.GetInt32(0),
-                            Nombre = reader.GetString(1),
-                            UserName = reader.GetString(2)
-                        };
-                        return usuario;
+                            Usuario usuario = new Usuario
+                            {
+                                Id = reader.GetInt32(0),
+                                Nombre = reader.GetString(1),
+                                UserName = reader.GetString(2)
+                            };
+                            return usuario;
+                        }
+                    }
+                        
                 }
                 reader.Close();
 

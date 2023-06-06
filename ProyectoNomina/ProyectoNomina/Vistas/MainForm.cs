@@ -19,7 +19,7 @@ namespace ProyectoNomina
             InitializeComponent();
             customizeDesign();
             this.empleadoRepository = empleadoRepository;
-           
+
         }
 
 
@@ -133,5 +133,10 @@ namespace ProyectoNomina
             }
         }
         #endregion
+
+        private void pbxLogo_Click(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
